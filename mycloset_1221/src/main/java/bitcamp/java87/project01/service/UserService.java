@@ -12,11 +12,12 @@ public interface UserService {
 	
 	public User getUser(String email) throws Exception;
 	
+	public User getUser(int user_no) throws Exception;
+	
 	public Map<String , Object> getUserList(Search search) throws Exception;
 	
 	public void updateUser(User user) throws Exception;
 	
-	public void faceupdateUser(User user) throws Exception;
 	// ȸ�� ID �ߺ� Ȯ��
 	public boolean checkDuplication(String email) throws Exception;
 	

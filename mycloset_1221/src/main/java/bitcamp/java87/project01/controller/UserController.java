@@ -47,8 +47,6 @@ public class UserController {
 	int pageSize;
 	
 	
-	//@RequestMapping("/addUserView.do")
-	//public String addUserView() throws Exception {
 	@RequestMapping( value="addUser", method=RequestMethod.GET )
 	public String addUser() throws Exception{
 	
@@ -57,7 +55,7 @@ public class UserController {
 		return "redirect:/user/addUserView.jsp";
 	}
 	
-	//@RequestMapping("/addUser.do")
+
 	@RequestMapping( value="addUser", method=RequestMethod.POST )
 	public String addUser( @ModelAttribute("user") User user,HttpSession session) throws Exception {
 
@@ -81,6 +79,15 @@ public class UserController {
 		model.addAttribute("user", user);
 		
 		return "forward:/user/getUser.jsp";
+	}
+	
+	@RequestMapping( value="getUserbyNo", method=RequestMethod.GET )
+	public String getUserbyNo( @RequestParam("user_no") int user_no , Model model ) throws Exception {
+	  
+	  System.out.println("/user/getUser : GET");
+
+	  
+	  return "forward:/user/getUser.jsp";
 	}
 	
 	//@RequestMapping("/updateUserView.do")
@@ -163,17 +170,28 @@ public class UserController {
 	
 	
 	@RequestMapping (value="faceupdateUser", method=RequestMethod.POST )
-	public @ResponseBody User faceupdateUser(String email, String nick, HttpSession session) throws Exception {
-	System.out.println("여기 파일업로드 컨트롤러");
+	public @ResponseBody User faceupdateUser(MultipartHttpServletRequest req, HttpSession session) throws Exception {
 	
+	MultipartFile file = req.getFile("testFile");
 	User user = new User();
-	user.setNick(nick);
-	user.setEmail(email);
 	
-	userService.faceupdateUser(user);
-	user=userService.getUser(user.getEmail());
-	session.setAttribute("faceUser", user);
-	System.out.println("여기 유저업데이트 디비후");
+	if(file.getSize() != 0) {
+		System.out.println("사진파일");
+		String path ="C:\\messengerBot\\mycloset01\\src\\main\\webapp\\header\\upload\\"+file.getOriginalFilename();
+		file.transferTo(new File(path));
+	}
+   if(file.getOriginalFilename() == ""){
+		if(req.getParameter("email") != null)
+		user.setPhot_path(userService.getUser(req.getParameter("email")).getPhot_path());
+	}else{
+		user.setPhot_path(file.getOriginalFilename());
+	}
+   	user.setEmail(req.getParameter("email"));
+	user.setPwd(req.getParameter("pwd"));
+	user.setNick(req.getParameter("nick"));
+   
+	 session.setAttribute("faceUser", user);
+	userService.updateUser(user);
 	
 	
 	return user;
@@ -249,8 +267,8 @@ public class UserController {
     
 		System.out.println("email:"+email);
 	  User user=userService.getUser(email);
-	  System.out.println("페이스 북로그인 세션만들기");
-	  System.out.println(user);
+	  System.out.println("로그인 세션만들기");
+   
     if(user != null){
       session.setAttribute("faceUser",user);
     }
@@ -269,7 +287,7 @@ public class UserController {
     userService.addUser(user);
    
     if(user != null){
-      session.setAttribute("faceUser",user);
+      session.setAttribute("user",user);
     }
  }
 	

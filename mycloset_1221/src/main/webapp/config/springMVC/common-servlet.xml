@@ -87,6 +87,7 @@
    	<mvc:resources mapping="/header/**" location="/header/" />
    	<mvc:resources mapping="/main/**" location="/main/" />
    	<mvc:resources mapping="/account/**" location="/account/" />
+   	<mvc:resources mapping="/wardrobe/**" location="/wardrobe/" />
    	<mvc:resources mapping="/node/**" location="/node/" />
    	   	
 	<!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->

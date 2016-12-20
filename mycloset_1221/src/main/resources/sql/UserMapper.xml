@@ -19,7 +19,7 @@
 		</resultMap> -->
 		
 		<resultMap type="user" id="userSelectMap">
-		<result property="user_no" column="user_no" jdbcType="VARCHAR" />
+		<result property="user_no" column="user_no" jdbcType="NUMERIC" />
 		<result property="email" column="email" jdbcType="VARCHAR" />
 		<result property="nick" column="nick" jdbcType="VARCHAR" />
 		<result property="pwd" column="pwd" jdbcType="VARCHAR" />
@@ -42,10 +42,19 @@
 	 <!-- SQL : SELECT ONE -->
 	 <select 	id="getUser"	parameterType="string"	resultMap="userSelectMap">
 		SELECT
-		user_no, email, nick , pwd , phot_path  		
+		user_no, email, nick , pwd , phot_path
 		FROM user_info 
 		WHERE email = #{value}
 	 </select>
+	 
+	 <!-- SQL : SELECT ONE -->
+     <select    id="getUserByNo"    parameterType="int" resultMap="userSelectMap">
+        SELECT
+        user_no, email, nick , pwd , phot_path          
+        FROM user_info 
+        WHERE user_no = #{value}
+     </select>
+	 
 	 
 	 <!-- SQL : UPDATE -->
 	 <update	id="updateUser"	parameterType="user" >

@@ -37,7 +37,12 @@ public class UserDaoImpl implements UserDao{
 		return sqlSession.selectOne("UserMapper.getUser", email);
 	}
 	
+	public User getUser(int user_no) throws Exception {
+	  return sqlSession.selectOne("UserMapper.getUserByNo", user_no);
+	}
+	
 	public void updateUser(User user) throws Exception {
+		System.out.println("여긴 DAO");
 		sqlSession.update("UserMapper.updateUser", user);
 	}
 
@@ -47,11 +52,5 @@ public class UserDaoImpl implements UserDao{
 
 	public int getTotalCount(Search search) throws Exception {
 		return sqlSession.selectOne("UserMapper.getTotalCount", search);
-	}
-
-	@Override
-	public void faceupdateUser(User user) throws Exception {
-		sqlSession.update("UserMapper.faceupdateUser", user);
-		
 	}
 }

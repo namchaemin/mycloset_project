@@ -44,6 +44,14 @@ public class UserServiceImpl implements UserService{
 		return user;
 	}
 
+	public User getUser(int user_no) throws Exception {
+
+	  User user = userDao.getUser(user_no);
+	  System.out.println(user);
+	  
+	  return user;
+	}
+
 	public Map<String , Object > getUserList(Search search) throws Exception {
 		List<User> list= userDao.getUserList(search);
 		int totalCount = userDao.getTotalCount(search);
@@ -56,6 +64,7 @@ public class UserServiceImpl implements UserService{
 	}
 
 	public void updateUser(User user) throws Exception {
+		System.out.println("여긴 Service");
 		userDao.updateUser(user);
 	}
 
@@ -66,10 +75,5 @@ public class UserServiceImpl implements UserService{
 			result=false;
 		}
 		return result;
-	}
-
-	@Override
-	public void faceupdateUser(User user) throws Exception {
-		userDao.faceupdateUser(user);		
 	}
 }
