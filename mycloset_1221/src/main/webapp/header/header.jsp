@@ -44,8 +44,10 @@
 				    </li>
 				     
 					<li>
-                        <img class="hd-icon-chat" 
-                               src="../header/css/images/icon-chat.svg" alt="chat">
+						<a href="#" class="hd-gnb-message">
+	                        <img class="hd-icon-chat" 
+	                               src="../header/css/images/icon-chat.svg" alt="chat">
+                        </a>
 						<ul class="hd-gnb-sub hd-msg">
 							<span class="hd-tab-msg"> 
 							    <a href="#"> Message </a>
@@ -61,7 +63,7 @@
 							<span class="hd-msg-txt"> recent message </span>
 							<li class="hd-receive-msg-list01">
 								<div class="hd-msgList firstMsgList">
-									<img class="msgUserPic" src="css/images/profile01.png"
+									<img class="msgUserPic" src="../header/css/images/profile01.png"
 										alt="msgUser" />
 									<!--   <p class="msgUserPic"></p> -->
 									<span class="msgUserId"> PopEye00 </span> <span class="userMsg">
@@ -75,46 +77,47 @@
 										data-ref="PASS_THROUGH_PARAM" color="blue" size="standard">
 									</div>
 								</div>
-
-
 							</li>
 						</ul> <!-- //receiveMessageBox --></li>
 					<!-- //gnb02 Message -->
 
 					<!-- gnb03 my account modify-->
 					<li>
-    					<c:if test="${!empty user }">
-						    <!-- 프로필 사진이 null일 때 -->
-						    <c:if test="${empty user.phot_path}">
-								<img class="hd-my-img" alt=""
-                                                    src="../header/upload/images.png" draggable="false"
-                                                    data-pin-nopin="true">
-							</c:if>
-							<!-- 프로필 사진이 업로드되어 있을 때  -->
-							<c:if test="${!empty user.phot_path}">
-	                             <img class="hd-my-img" alt=""
-	                                       src="../header/upload/${user.phot_path}">
-	                         </c:if>
-	                         <span class="hd-my-nick"> ${user.nick} </span>
-	                         <!-- <span class="hd-my-email"> ${user.email} </span>  -->
-                       </c:if>
-                       
-                      <!-- facebook으로 로그인 시 --> 
-                       <c:if test="${!empty  faceUser}">
-	                         <!-- facebook 프로필 사진이 null일 때 -->
-	                         <c:if test="${empty   faceUser.phot_path}">
-	                               <img class="hd-my-img" alt="" src="../header/upload/images.png"
-	                                   draggable="false" data-pin-nopin="true">
-	                         </c:if>
-	                         <!-- facebook 프로필 사진이 업로드되어 있을 때 -->
-	                         <c:if test="${!empty user.phot_path}">
-		                         <img class="hd-my-img" alt=""
-		                                     src="../header/upload/${user.phot_path}" draggable="false"
-		                                     data-pin-nopin="true">
-	                         </c:if>
-	                         <span class="hd-my-nick"> ${ faceUser.nick} </span> 
-	                        <!--  <span class="hd-my-email"> ${ faceUser.email} </span> -->
-					   </c:if>
+					   <a href="/wardrobe/getWardrobeList?user_no=${user.user_no}" class=""
+                                        draggable="false">
+	    					<c:if test="${!empty user }">
+							    <!-- 프로필 사진이 null일 때 -->
+							    <c:if test="${empty user.phot_path}">
+									<img class="hd-my-img" alt=""
+	                                                    src="../header/upload/images.png" draggable="false"
+	                                                    data-pin-nopin="true">
+								</c:if>
+								<!-- 프로필 사진이 업로드되어 있을 때  -->
+								<c:if test="${!empty user.phot_path}">
+		                             <img class="hd-my-img" alt=""
+		                                       src="../header/upload/${user.phot_path}">
+		                         </c:if>
+		                         <span class="hd-my-nick"> ${user.nick} </span>
+		                         <!-- <span class="hd-my-email"> ${user.email} </span>  -->
+	                       </c:if>
+	                       
+	                      <!-- facebook으로 로그인 시 --> 
+	                       <c:if test="${!empty  faceUser}">
+		                         <!-- facebook 프로필 사진이 null일 때 -->
+		                         <c:if test="${empty   faceUser.phot_path}">
+		                               <img class="hd-my-img" alt="" src="../header/upload/images.png"
+		                                   draggable="false" data-pin-nopin="true">
+		                         </c:if>
+		                         <!-- facebook 프로필 사진이 업로드되어 있을 때 -->
+		                         <c:if test="${!empty user.phot_path}">
+			                         <img class="hd-my-img" alt=""
+			                                     src="../header/upload/${user.phot_path}" draggable="false"
+			                                     data-pin-nopin="true">
+		                         </c:if>
+		                         <span class="hd-my-nick"> ${ faceUser.nick} </span> 
+		                        <!--  <span class="hd-my-email"> ${ faceUser.email} </span> -->
+						   </c:if>
+					   </a>
 					</li>
 				</ul>
 				<!--//hd-gnb-->

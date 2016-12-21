@@ -38,28 +38,16 @@ function headerGnb() {
 	var th = $list.height()
 	var isPlay = false
 	
-    /*$("#hd-gnb>li>a").click(function () {*/
-    	$(document).on("click","#hd-gnb>li>a",function () {
+	$(document).on("click","#hd-gnb>li>a",function () {
     	
         if (!isPlay) {
-            $(this).next().slideDown().show().animate({opacity:1, top:85}, 300);
+            $(this).next().show().animate({opacity:1, top:85}, 300);
         } else {
             $list.hide("slow").animate({opacity:0, top:120}, 300);
         }
 
         isPlay = !isPlay
     });
-	
-/*	
-	$( "#hd-gnb>li>a" ).click(function() {
-		  $(this).next().animate({
-		    opacity: 1,
-		    top: 85,
-		    height: $(this).next().height()
-		  }, 500);
-	});
-*/
-
 }
 
 function headerAccount() {
