@@ -82,13 +82,13 @@
 					<!-- //gnb02 Message -->
 
 					<!-- gnb03 my account modify-->
-					<c:if test="${!empty user }">
-						<li>
+					<li>
+    					<c:if test="${!empty user }">
 						    <!-- 프로필 사진이 null일 때 -->
 						    <c:if test="${empty user.phot_path}">
-								<img class="hd-icon-account" 
-								           src="../header/css/images/icon-account.svg"
-										   alt="account">
+								<img class="hd-my-img" alt=""
+                                                    src="../header/upload/images.png" draggable="false"
+                                                    data-pin-nopin="true">
 							</c:if>
 							<!-- 프로필 사진이 업로드되어 있을 때  -->
 							<c:if test="${!empty user.phot_path}">
@@ -96,12 +96,11 @@
 	                                       src="../header/upload/${user.phot_path}">
 	                         </c:if>
 	                         <span class="hd-my-nick"> ${user.nick} </span>
-	                         <span class="hd-my-email"> ${user.email} </span>
-	                       </li>
+	                         <!-- <span class="hd-my-email"> ${user.email} </span>  -->
                        </c:if>
+                       
+                      <!-- facebook으로 로그인 시 --> 
                        <c:if test="${!empty  faceUser}">
-	                       <li>
-	                         <!-- facebook으로 로그인 시 --> 
 	                         <!-- facebook 프로필 사진이 null일 때 -->
 	                         <c:if test="${empty   faceUser.phot_path}">
 	                               <img class="hd-my-img" alt="" src="../header/upload/images.png"
@@ -114,71 +113,9 @@
 		                                     data-pin-nopin="true">
 	                         </c:if>
 	                         <span class="hd-my-nick"> ${ faceUser.nick} </span> 
-	                         <span class="hd-my-email"> ${ faceUser.email} </span>
-						</li>
-					</c:if>
-
-					<!-- gnb03 my account 수정전-->
-						<ul class="hd-gnb-sub ">
-							<li class="hd-sub-account-bar">
-							<span class="hd-account-bar-id"> My Account </span> 
-							<c:if test="${!empty user }">
-							     <span class="hd-account-bar-logout">
-							         <a onclick=" logout();"> logout</a> 
-						         </span>
-					         </li>
-							<li class="hd-sub-account">
-							     <a href="#" class="hd-account">
-								 <span class="hd-my-account"> 
-								 <c:if test="${!empty user.phot_path}">
-									<img class="hd-my-img" alt=""
-												src="../header/upload/${user.phot_path}" draggable="false"
-												data-pin-nopin="true">
-								  </c:if> 
-								   <c:if test="${empty user.phot_path}">
-								        <img class="hd-my-img" alt=""
-												    src="../header/upload/images.png" draggable="false"
-												    data-pin-nopin="true">
-									</c:if>
-								</span> 
-								<span class="hd-my-nick"> ${user.nick} </span> 
-								<span class="hd-my-email"> ${user.email} </span>
-							     </a></li>
-							</c:if>
-
-							<c:if test="${!empty  faceUser}">
-								<span class="hd-account-bar-logout"><a
-									onclick=" FB.logout();"> logout</a> </span></li>
-
-					<li class="hd-sub-account"><a href="#" class="hd-account">
-							<span class="hd-my-account"> <c:if
-									test="${!empty   faceUser.phot_path}">
-									<img class="hd-my-img" alt="" src="${ faceUser.phot_path}"
-										draggable="false" data-pin-nopin="true">
-								</c:if> <c:if test="${empty   faceUser.phot_path}">
-									<img class="hd-my-img" alt="" src="../header/upload/images.png"
-										draggable="false" data-pin-nopin="true">
-								</c:if>
-
-						</span> <span class="hd-my-nick"> ${ faceUser.nick} </span> <span
-							class="hd-my-email"> ${ faceUser.email} </span>
-					</a></li>
-					</c:if>
-
-
-					<li class="hd-sub-account-list">
-						<ul>
-							<li class="hd-account-list-wdr"><a href="#" class=""
-								draggable="false">
-									<div class="my-wdr">내 옷장</div>
-							</a></li>
-							<li class="hd-account-list-info"><a class="hd-account-set"
-								href="../account/account.jsp">내 정보 수정</a></li>
-						</ul>
+	                        <!--  <span class="hd-my-email"> ${ faceUser.email} </span> -->
+					   </c:if>
 					</li>
-				</ul>
-				</li>
-				<!--// gnb03 myAccount -->
 				</ul>
 				<!--//hd-gnb-->
 			</nav>

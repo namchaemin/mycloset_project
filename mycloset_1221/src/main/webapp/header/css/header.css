@@ -257,6 +257,26 @@
 }
 
 /* my account detail css */
+#hd-gnb li:LAST-CHILD {
+	border-radius: 0px;
+	border-left: 1px solid #eee;
+	padding-left: 10px;
+}
+
+img.hd-my-img {
+	width: 26px;
+	border-radius: 50%;
+	margin: 3px;
+}
+
+span.hd-my-nick {
+	display: inline-block;
+	margin-top: 10px;
+	margin-left: 2px;
+	font-weight: 500;
+}
+
+/* 
 #hd-gnb li:last-child .hd-gnb-sub {
     width: 200px;
     text-align: center;
@@ -339,7 +359,7 @@
 }
 .hd-account-list-info {
 }
-
+ */
 
 /* Sub Menu Position control */
 #hd-gnb li:first-child ul.hd-gnb-sub {
