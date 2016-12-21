@@ -184,19 +184,23 @@ sweep-to-left:before
 }
 .hd-msg-tab>span{
     display: inline-block;
-    width: 47%;
+    width: 92%;
     border-radius: 10px;
     margin-top: 4px;
     margin-bottom: 4px;
 }
+
 .hd-tab-msg {
-    margin-left:4px;
     background: #fff;
 }
 
 .hd-tab-bot {
-    margin-right: 4px;
+    height: 30px;
+    background: #0084ff;
+    line-height: 30px;
+    padding-top: 5px;
 }
+
 
 .hd-msg-tab a{
     font-size: 11px;
@@ -373,7 +377,7 @@ span.hd-my-nick {
 }
 
 #hd-gnb li:nth-child(2) ul.hd-gnb-sub {
-    right: 24px;
+    right: 40px;
 }
 
 #hd-gnb li:last-child ul.hd-gnb-sub {

@@ -49,10 +49,11 @@
 	                               src="../header/css/images/icon-chat.svg" alt="chat">
                         </a>
 						<ul class="hd-gnb-sub hd-msg">
+						<div class="hd-msg-tab">
 							<span class="hd-tab-msg"> 
 							    <a href="#"> Message </a>
-							</span> 
-							<span class="hd-tab-bot"> 
+							</span>
+							<span class="hd-tab-bot">
 								<span id="chatbot">
 								      <div class="fb-messengermessageus"
 										    messenger_app_id='1222628424496492'
@@ -60,6 +61,7 @@
 									 </div>
 						         </span>
 							</span>
+							</div>
 							<span class="hd-msg-txt"> recent message </span>
 							<li class="hd-receive-msg-list01">
 								<div class="hd-msgList firstMsgList">
