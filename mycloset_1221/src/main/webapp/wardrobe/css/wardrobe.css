@@ -67,8 +67,8 @@ a:focus {
 	font-weight: 500;
 }
 
-#wdr-user-follow {
-
+#wdr-user-follow, 
+#wdr-user-modify {
     margin-left: 40px;
     margin-top: 12px;
 }

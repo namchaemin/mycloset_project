@@ -4,6 +4,7 @@ $(function() {
 	wdrPostCount();
 	wdrThumbnail();
 	wdrBtnGroup();
+	wdrAccount();
 	
 	fncAddWardrobe();
 	fncUpdateWardrobe();
@@ -146,6 +147,11 @@ function wdrBtnGroup() {
 
 }
 
+/* 프로필 편집 버튼 클릭시 colorbox 호출 */
+function wdrAccount() {
+	$("#wdr-user-modify").colorbox({href:"../account/account.jsp", scrolling:"false"});
+}
+
 
 /* 옷장 insert function */
 function fncAddWardrobe() {
@@ -228,4 +234,6 @@ function fncDeleteWardrobe() {
 	/*$(".wdr-delete").colorbox({href:"../wardrobe/deleteWardrobe.jsp", scrolling:"false"});*/
 	
 }
+
+
 

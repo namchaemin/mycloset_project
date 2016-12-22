@@ -175,6 +175,7 @@ sweep-to-left:before
     height: 300px;
     text-align: center;
 }
+
 .hd-msg-tab {
     display: inline-block;
     width:96%;
@@ -182,6 +183,7 @@ sweep-to-left:before
     border-radius: 10px;
     margin-top:5px
 }
+
 .hd-msg-tab>span{
     display: inline-block;
     width: 92%;
@@ -242,6 +244,10 @@ sweep-to-left:before
     background-color: #eee;
 }
 
+.hd-receive-msg-list02 {
+    padding: 0px;
+}
+
 .msgUserPic {
     width: 40px;
     height: 40px;
@@ -266,7 +272,7 @@ sweep-to-left:before
 }
 
 /* my account detail css */
-#hd-gnb li:LAST-CHILD {
+#hd-gnb>li:LAST-CHILD {
 	border-radius: 0px;
 	border-left: 1px solid #eee;
 	padding-left: 10px;

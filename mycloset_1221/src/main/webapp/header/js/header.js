@@ -3,7 +3,6 @@ $(function() {
 	headerLogo();
 	headerSearchIcon();
 	headerGnb();
-	headerAccount();
 });
 
 function headerInit() {
@@ -50,10 +49,6 @@ function headerGnb() {
     });
 }
 
-function headerAccount() {
-	$(".hd-account").colorbox({href:"../account/account.jsp", scrolling:"false"});
-	$(".hd-account-set").colorbox({height:"115%", scrolling:"false"});
 
-}
 
 
