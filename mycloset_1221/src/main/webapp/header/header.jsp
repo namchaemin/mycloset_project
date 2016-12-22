@@ -8,7 +8,7 @@
 <!-- CSS -->
 <link rel="stylesheet" href="../header/css/reset.css">
 <link rel="stylesheet"
-	href="../node_modules/bootstrap/dist/css/bootstrap.css">
+	     href="../node_modules/bootstrap/dist/css/bootstrap.css">
 <link rel="stylesheet" href="../header/css/fonts.css">
 <link rel="stylesheet" href="../header/css/header.css">
 <link rel="stylesheet" href="../header/css/colorbox.css">
@@ -104,8 +104,8 @@
 							    <!-- 프로필 사진이 null일 때 -->
 							    <c:if test="${empty user.phot_path}">
 									<img class="hd-my-img" alt=""
-	                                                    src="../header/upload/images.png" draggable="false"
-	                                                    data-pin-nopin="true">
+                                              src="../header/upload/images.png" draggable="false"
+                                              data-pin-nopin="true">
 								</c:if>
 								<!-- 프로필 사진이 업로드되어 있을 때  -->
 								<c:if test="${!empty user.phot_path}">
