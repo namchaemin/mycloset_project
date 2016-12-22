@@ -75,7 +75,7 @@
 							aria-label="Close">
 							<span aria-hidden="true">&times;</span>
 						</button>
-						<h4 class="modal-title">WARDROBE</h4>
+						<h4 class="modal-title">옷장 수정</h4>
 					</div>
 
 					<div class="modal-body">
@@ -90,7 +90,6 @@
 						<button type="submit" id="wdr-modify-btn" 
 						               class="btn btn-default" disabled="disabled">MODIFY</button>
 					</div>
-
 				</div>
 				<!-- /.modal-content -->
 			</form>
@@ -111,7 +110,7 @@
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal"
 							aria-label="Close">
-							<span aria-hidden="true">&times;</span>
+							<span aria-hidden="true"> &times; </span>
 						</button>
 						<h4 class="modal-title"> 옷장을 삭제할까요? </h4>
 					</div>
@@ -123,8 +122,8 @@
 					</div>
 
 					<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal"> 취소 </button>
-                    <button type="submit" class="wdr-del-submit btn btn-primary"> 확인 </button>
+						<button type="button" class="btn btn-default" data-dismiss="modal"> 취소 </button>
+	                    <button type="submit" class="wdr-del-submit btn btn-primary"> 확인 </button>
 					</div>
 
 				</div>
@@ -151,8 +150,9 @@
 			<!-- User Profile Info -->
 			<div class="wdr-userInfo col-xs-12 col-sm-5 col-md-7">
 				<h4 class="wdr-userId">${cls_user.nick}</h4>
-				<a id="wdr-user-follow" class="btn btn-default btn-sm" href="#"
-					role="button">팔로우</a> <a id="wdr-user-unfollow"
+				<a id="wdr-user-follow" 
+				    class="btn btn-default btn-sm" href="#" role="button">팔로우</a>
+				<a id="wdr-user-unfollow"
 					class="btn btn btn-primary btn-sm" href="#" role="button">언팔로우</a>
 
 				<ul class="wdr-follow">
@@ -184,24 +184,28 @@
 			<!-- Setting Button -->
 			<div class="wdr-btn col-xs-12 col-sm-4 col-md-1">
 				<ul>
-					<li class="create-wdr"><a href="#" data-toggle="modal"
-						data-target="#addWdrModal" role="button"> ADD </a></li>
+					<li class="create-wdr">
+					   <a href="#" data-toggle="modal" 
+					        data-target="#addWdrModal" role="button"> ADD </a>
+			        </li>
 					<!-- 
 					<li class="wdr-update-user">
 					   <a href="#"> SETTING </a>
 				   </li>
     				  -->
-					<li class="wdr-setting"><a href="#"> SET </a></li>
+					<li class="wdr-setting">
+					   <a href="#"> SET </a>
+				   </li>
 				</ul>
 			</div>
 		</div>
 		<!--// Wardrobe Header -->
 
-		<!-- Wardrobe List Content -->
+		<!-- Wardrobe List Content / 리스트 반복문 -->
 		<div class="row" id="wdr-list-wrap">
 			<c:forEach var="wardrobe" items="${list}">
 				<div class="wdr-content col-xs-12 col-sm-6  col-md-4"
-					id="wdr-list-box">
+					    id="wdr-list-box">
 					<div class="wdr-grid">
 						<div class="row" id="wdr-thumb-wrap">
 							<div class="wdr-thumb col-xs-4 col-md-4"></div>
@@ -212,7 +216,7 @@
 							<div class="wdr-thumb col-xs-4 col-md-4"></div>
 						</div>
 						<a href="#" class="wdr-title"> 
-						  <input type="hidden" name="cls_no" id="cls_no" value="${wardrobe.cls_no}">
+						    <input type="hidden" name="cls_no" id="cls_no" value="${wardrobe.cls_no}">
 							<span class="wdr-cls-name"> ${wardrobe.cls_name} </span>
 						</a>
 						<p class="wdr-post-cnt">0 POSTS</p>

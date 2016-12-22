@@ -7,7 +7,7 @@ $(function() {
 });
 
 function headerInit() {
-	$(".hd-gnb-sub").css("opacity",0).hide();
+	$(".hd-gnb-sub").hide().css("opacity",0);
 }
 
 function headerLogo() {
@@ -38,10 +38,10 @@ function headerGnb() {
 	var th = $list.height()
 	var isPlay = false
 	
-	$(document).on("click","#hd-gnb>li>a",function () {
+	$(".hd-icon-chat").on("click", function () {
     	
         if (!isPlay) {
-            $(this).next().show().animate({opacity:1, top:85}, 300);
+            $(this).parent().next("ul.hd-msg").show().animate({opacity:1, top:85}, 300);
         } else {
             $list.hide("slow").animate({opacity:0, top:120}, 300);
         }

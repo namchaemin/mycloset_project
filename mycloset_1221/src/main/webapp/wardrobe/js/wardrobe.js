@@ -154,7 +154,7 @@ function fncAddWardrobe() {
 		
 		var wdrName = $("#addWdr-input").val();
 		var userNo = $("#user_no").val();
-
+		
 		$.ajax({
 			url : "/wardrobe/addWardrobe",
 			data : {
@@ -199,7 +199,6 @@ function fncUpdateWardrobe() {
 				}
 			});
 		});
-		
 	});	
 }
 

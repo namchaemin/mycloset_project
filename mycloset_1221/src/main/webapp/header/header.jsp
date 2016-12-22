@@ -20,16 +20,16 @@
 		<header id="header">
 			<!-- logo -->
 			<h1 class="hd-logo">
-				<a id="hd-logo-link" href="../index.jsp"> <img id="hd-logo-svg"
-					src="../header/css/images/logo_pk.svg" alt="logo">
+				<a id="hd-logo-link" href="../index.jsp">
+				    <img id="hd-logo-svg" src="../header/css/images/logo_pk.svg" alt="logo">
 				</a>
 			</h1>
 
 			<!-- Search -->
 			<div id="hd-search">
 				<span id="hd-icon-search" class="glyphicon glyphicon-search"
-					aria-hidden="true"></span> <input type="text" class="hd-searchBox"
-					placeholder="Search" required />
+					       aria-hidden="true"></span> 
+					<input type="text" class="hd-searchBox" placeholder="Search" required />
 			</div>
 
 			<!-- Navigation -->
@@ -38,40 +38,53 @@
 
 				<!-- global navigation bar -->
 				<ul id="hd-gnb">
+				
+				    <!-- 업로드 -->
 					<li>
 					   <img class="hd-icon-upload"
 						         src="../header/css/images/icon-upload.svg" alt="upload">
 				    </li>
 				     
+				    <!-- 메세지/채팅 -->
 					<li>
+					    <!-- 아이콘 링크 -->
 						<a href="#" class="hd-gnb-message">
 	                        <img class="hd-icon-chat" 
 	                               src="../header/css/images/icon-chat.svg" alt="chat">
                         </a>
+                        
+                        <!-- 메세지 서브메뉴 -->
 						<ul class="hd-gnb-sub hd-msg">
-						<div class="hd-msg-tab">
-							<span class="hd-tab-msg"> 
-							    <a href="#"> Message </a>
-							</span>
-							<span class="hd-tab-bot">
-								<span id="chatbot">
-								      <div class="fb-messengermessageus"
-										    messenger_app_id='1222628424496492'
-										    page_id='1270710446313254' color="blue" size="standard">
-									 </div>
-						         </span>
-							</span>
-							</div>
-							<span class="hd-msg-txt"> recent message </span>
+						    <!-- Message/Chatbot 버튼 -->
+							<div class="hd-msg-tab">
+							
+								    <span class="hd-tab-msg"> 
+									    <a href="#"> Message </a>
+									</span>
+									
+									<span class="hd-tab-bot">
+										<span id="chatbot">
+										      <div class="fb-messengermessageus"
+												    messenger_app_id='1222628424496492'
+												    page_id='1270710446313254' color="blue" size="standard">
+											 </div>
+								         </span>
+									</span>
+							    </div>
+								<span class="hd-msg-txt"> recent message </span>
+								
+							<!-- 최근 메세지 리스트 -->
 							<li class="hd-receive-msg-list01">
 								<div class="hd-msgList firstMsgList">
 									<img class="msgUserPic" src="../header/css/images/profile01.png"
 										alt="msgUser" />
 									<!--   <p class="msgUserPic"></p> -->
-									<span class="msgUserId"> PopEye00 </span> <span class="userMsg">
-										안녕하세요. </span>
+									<span class="msgUserId"> PopEye00 </span> 
+									<span class="userMsg"> 안녕하세요. </span>
 								</div>
 							</li>
+							
+							<!-- 페이스북 체크 버튼 -->
 							<li class="hd-receive-msg-list02">
 								<div class="hd-msgList">
 									<div class="fb-send-to-messenger"
