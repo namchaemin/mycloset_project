@@ -2,6 +2,7 @@ $(function() {
 	headerInit();
 	headerLogo();
 	headerSearchIcon();
+	headerIcon()
 	headerGnb();
 });
 
@@ -29,6 +30,23 @@ function headerSearchIcon() {
 	});
 }
 
+// header gnb icon hover event
+function headerIcon() {
+	
+	$(".hd-icon-upload").hover(function() {
+		$(this).attr("src", "../header/css/images/icon-upload_hover.svg");
+	}, function() {
+		$(this).attr("src", "../header/css/images/icon-upload.svg");
+	});
+
+	$(".hd-icon-chat").on("mouseover",function() {
+		$(this).attr("src", "../header/css/images/icon-chat_hover.svg");
+	}/*, function() {
+		$(this).attr("src", "../header/css/images/icon-chat.svg");
+	}*/);
+	
+}
+
 
 // navigation show & hide
 function headerGnb() {
@@ -42,8 +60,10 @@ function headerGnb() {
         if (!isPlay) {
 //            $(this).parent().next("ul.hd-msg").show().animate({opacity:1, top:85}, 300);
             $("ul.hd-msg").show().animate({opacity:1, top:85}, 300);
+            $(".hd-icon-chat").attr("src", "../header/css/images/icon-chat_hover.svg");
         } else {
         	$("ul.hd-msg").hide("slow");
+        	$(".hd-icon-chat").attr("src", "../header/css/images/icon-chat.svg");
         }
 
         isPlay = !isPlay
