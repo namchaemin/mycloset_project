@@ -135,7 +135,6 @@ public class UserController {
 	 session.setAttribute("user", user);
 	userService.updateUser(user);
 	
-	
 	return user;
 	}
 	

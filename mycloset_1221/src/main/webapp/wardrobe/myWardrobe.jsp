@@ -190,10 +190,11 @@
 					<li class="wdr-update-user">
 					   <a href="#"> SETTING </a>
 				   </li>
-    				  -->
+    				 
 					<li class="wdr-setting">
 					   <a href="#"> SET </a>
 				   </li>
+				    -->
 				</ul>
 			</div>
 		</div>
@@ -215,7 +216,7 @@
 						</div>
 						<a href="#" class="wdr-title"> 
 						    <input type="hidden" name="cls_no" id="cls_no" value="${wardrobe.cls_no}">
-							<span class="wdr-cls-name"> ${wardrobe.cls_name} </span>
+							<span class="wdr-cls-name">${wardrobe.cls_name}</span>
 						</a>
 						<p class="wdr-post-cnt">0 POSTS</p>
 						<div class="wdr-btn-group">

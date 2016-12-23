@@ -33,16 +33,17 @@ function headerSearchIcon() {
 // navigation show & hide
 function headerGnb() {
 
-	var $list = $(".hd-gnb-sub")
-	var th = $list.height()
+//	var $list = $(".hd-gnb-sub")
+//	var th = $list.height()
 	var isPlay = false
 	
 	$(".hd-icon-chat").on("click", function () {
     	
         if (!isPlay) {
-            $(this).parent().next("ul.hd-msg").show().animate({opacity:1, top:85}, 300);
+//            $(this).parent().next("ul.hd-msg").show().animate({opacity:1, top:85}, 300);
+            $("ul.hd-msg").show().animate({opacity:1, top:85}, 300);
         } else {
-            $list.hide("slow").animate({opacity:0, top:120}, 300);
+        	$("ul.hd-msg").hide("slow");
         }
 
         isPlay = !isPlay

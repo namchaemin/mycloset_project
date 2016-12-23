@@ -62,13 +62,13 @@ public class WardrobeController {
 
     System.out.println("[wardrobeController] addWardrobe ::: POST ");
 
+    // Business Logic
     Wardrobe wardrobe = new Wardrobe();
     wardrobe.setUser_no(user_no);
     wardrobe.setCls_name(cls_name.trim());
 
     wardrobeService.addWardrobe(wardrobe);
 
-    // Business Logic
     System.out.println("[wardrobeController] addWardrobe ::: domain::: " + wardrobe);
 
     return wardrobe;
@@ -91,7 +91,7 @@ public class WardrobeController {
     model.addAttribute("cls_user", user);
     model.addAttribute("list", map.get("list"));
 
-    return  "forward:/wardrobe/myWardrobe.jsp";
+    return "forward:/wardrobe/myWardrobe.jsp";
   }
   
   
@@ -103,6 +103,7 @@ public class WardrobeController {
     System.out.println("[wardrobeController] ::: updateWardrobe ::: parameter:cls_no : "+cls_no);
     System.out.println("[wardrobeController] ::: updateWardrobe ::: parameter:cls_name : "+cls_name);
     
+    // Business Logic
     Wardrobe wardrobe = wardrobeService.getWardrobe(cls_no);
     wardrobe.setCls_name(cls_name.trim());
     System.out.println("[wardrobeController] ::: updateWardrobe ::: domain ::: before : "+wardrobe);
@@ -121,6 +122,7 @@ public class WardrobeController {
     System.out.println("[wardrobeController] ::: deleteWardrobe ");
     System.out.println("[wardrobeController] ::: deleteWardrobe ::: parameter:cls_no : "+cls_no);
     
+    // Business Logic
     wardrobeService.deleteWardrobe(cls_no);
     Wardrobe wardrobe = new Wardrobe();
     wardrobe.setCls_no(cls_no);

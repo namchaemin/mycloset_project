@@ -40,10 +40,6 @@
 						<p>페이스북 로그인 사용자</p>
 						<input type="hidden" id="acnt-input-file" name="testFile" >
 					</c:if>
-
-
-
-
 				</div>
 			</div>
 			<!-- //row 1 -->

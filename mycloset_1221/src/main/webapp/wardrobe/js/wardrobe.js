@@ -147,7 +147,7 @@ function wdrBtnGroup() {
 
 }
 
-/* 프로필 편집 버튼 클릭시 colorbox 호출 */
+/* 프로필 편집 버튼 클릭시 account colorbox 호출 */
 function wdrAccount() {
 	$("#wdr-user-modify").colorbox({href:"../account/account.jsp", scrolling:"false"});
 }
@@ -182,7 +182,7 @@ function fncUpdateWardrobe() {
 	
 	/* 수정 버튼 클릭시 input value에 기존 옷장 이름 출력 */
 	$(".wdr-modify").on("click", function() {
-		var beforeWdrName= $(this).parent().prev().prev().children(".wdr-cls-name").text();
+		var beforeWdrName= $(this).parent().prev().prev().children(".wdr-cls-name").text().trim();
 		$("#updateWdr-input").val(beforeWdrName);	
 		var wdrNo = $(this).parent().prev().prev().children("#cls_no").val();
 		
@@ -190,7 +190,6 @@ function fncUpdateWardrobe() {
 		$("#wdr-modify-btn").on("click", function(){
 
 			var wdrName = $("#updateWdr-input").val();
-			alert(wdrNo+wdrName);
 			
 			$.ajax({
 				url : "/wardrobe/updateWardrobe",
