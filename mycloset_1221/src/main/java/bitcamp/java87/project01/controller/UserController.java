@@ -119,12 +119,14 @@ public class UserController {
       String path = "C:\\messengerBot\\mycloset01\\src\\main\\webapp\\header\\upload\\" + file.getOriginalFilename();
       file.transferTo(new File(path));
     }
+    
     if (file.getOriginalFilename() == "") {
       if (req.getParameter("email") != null)
         user.setPhot_path(userService.getUser(req.getParameter("email")).getPhot_path());
     } else {
       user.setPhot_path(file.getOriginalFilename());
     }
+    
     user.setEmail(req.getParameter("email"));
     user.setPwd(req.getParameter("pwd"));
     user.setNick(req.getParameter("nick"));

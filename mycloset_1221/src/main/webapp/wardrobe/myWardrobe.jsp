@@ -142,16 +142,22 @@
 		<!-- User Profile Picture -->
 		<div id="wdr-user-row" class="row">
 			<div id="wdr-user" class="col-xs-12 col-md-4">
-				<img class="wdr-userImg img-circle"
-					src="../wardrobe/css/images/user01.png" alt="" />
+                <c:if test="${!empty user.phot_path}">
+                    <img src="../header/upload/${user.phot_path}" class=" img-circle"
+                        id="acnt-user-img" alt="Responsive image">
+                </c:if>
+                <c:if test="${!empty faceUser.phot_path}">
+                    <img src="${faceUser.phot_path}" class=" img-circle"
+                        id="acnt-user-img" alt="Responsive image">
+                </c:if>
 			</div>
 			<!--//wardrobeUser -->
 
 			<!-- User Profile Info -->
 			<div class="wdr-userInfo col-xs-12 col-sm-5 col-md-7">
 				<h4 class="wdr-userId">${cls_user.nick}</h4>
-				<a id="wdr-user-modify" 
-				    class="btn btn-default btn-sm" href="#" role="button">프로필수정</a>
+<!-- 				<a id="wdr-user-modify" 
+				    class="btn btn-default btn-sm" href="#" role="button">프로필수정</a> -->
 				
 				<ul class="wdr-follow">
 					<li class="wdr-wdrs">
@@ -199,7 +205,7 @@
     				 
 					<li class="wdr-user-logout">
 					   <a href="#">
-					       <img class="wdr-icon-logout" 
+					       <img class="wdr-icon-logout" onclick=" logout();"
 					                  src="../wardrobe/css/images/icon-logout_b.svg" alt="logout" />
 					   </a>
 				   </li>
@@ -262,6 +268,12 @@
 	<script src="../node_modules/jquery/dist/jquery.js"></script>
 	<script src="../wardrobe/js/jquery.colorbox-min.js"></script>
 	<script src="../wardrobe/js/wardrobe.js"></script>
+    <script src="../front/js/facebooklogout.js"></script>
+    <script type="text/javascript">
+        function logout() {
+            location.href = "/index.jsp";
+        }
+    </script>
 
 </body>
 </html>

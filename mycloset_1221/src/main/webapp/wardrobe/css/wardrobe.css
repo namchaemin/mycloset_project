@@ -50,7 +50,7 @@ a:focus {
 	overflow: hidden;
 }
 
-.wdr-userImg {
+#wdr-user img {
 	width: 140px;
 	margin: auto;
 	margin-top: 10px;
@@ -67,8 +67,7 @@ a:focus {
 	font-weight: 500;
 }
 
-#wdr-user-follow, 
-#wdr-user-modify {
+#wdr-user-follow {
     margin-left: 40px;
     margin-top: 12px;
 }
@@ -81,13 +80,14 @@ a:focus {
 }
 
 .wdr-follow {
+	clear: both;
 	text-align: left;
-	margin-top: 30px;
-	margin-bottom: 70px;
+	margin-bottom: 50px;
 }
 
 .wdr-follow li {
 	float: left;
+	margin-top: 12px;
 	vertical-align: middle;
 }
 
