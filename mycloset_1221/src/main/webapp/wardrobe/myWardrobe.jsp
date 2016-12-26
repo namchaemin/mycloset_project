@@ -144,11 +144,11 @@
 			<div id="wdr-user" class="col-xs-12 col-md-4">
                 <c:if test="${!empty user.phot_path}">
                     <img src="../header/upload/${user.phot_path}" class=" img-circle"
-                        id="acnt-user-img" alt="Responsive image">
+                               alt="Responsive image">
                 </c:if>
                 <c:if test="${!empty faceUser.phot_path}">
                     <img src="${faceUser.phot_path}" class=" img-circle"
-                        id="acnt-user-img" alt="Responsive image">
+                               alt="Responsive image">
                 </c:if>
 			</div>
 			<!--//wardrobeUser -->
@@ -201,11 +201,10 @@
 					       <img class="wdr-icon-setting" 
 					                  src="../wardrobe/css/images/icon-setting_b.svg" alt="setting" />
 					   </a>
-				   
     				 
 					<li class="wdr-user-logout">
 					   <a href="#">
-					       <img class="wdr-icon-logout" onclick=" logout();"
+					       <img class="wdr-icon-logout"
 					                  src="../wardrobe/css/images/icon-logout_b.svg" alt="logout" />
 					   </a>
 				   </li>
@@ -268,12 +267,7 @@
 	<script src="../node_modules/jquery/dist/jquery.js"></script>
 	<script src="../wardrobe/js/jquery.colorbox-min.js"></script>
 	<script src="../wardrobe/js/wardrobe.js"></script>
-    <script src="../front/js/facebooklogout.js"></script>
-    <script type="text/javascript">
-        function logout() {
-            location.href = "/index.jsp";
-        }
-    </script>
+
 
 </body>
 </html>

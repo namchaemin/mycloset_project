@@ -1,8 +1,8 @@
-@CHARSET "UTF-8" !important;
+@CHARSET "UTF-8";
 
 form {
-    width:360px !important !important;
-    margin: auto !important !important;	
+    width:360px !important;
+    margin: auto !important;	
 }
 
 #accountWrap {	

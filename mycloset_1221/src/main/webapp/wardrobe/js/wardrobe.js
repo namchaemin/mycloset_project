@@ -174,6 +174,7 @@ function wdrBtnGroup() {
 /* 프로필 편집 버튼 클릭시 account colorbox 호출 */
 function wdrAccount() {
 	$(".wdr-icon-setting").colorbox({href:"../account/account.jsp", scrolling:"false"});
+	$(".wdr-icon-logout").colorbox({href:"../wardrobe/logout.jsp", scrolling:"false"});
 }
 
 

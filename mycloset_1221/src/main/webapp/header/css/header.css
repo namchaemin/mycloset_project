@@ -1,84 +1,84 @@
-@CHARSET "UTF-8";
+@CHARSET "UTF-8" !important;
 
 #headerWrap {
-    width: 100%;
-    height: 90px;
-    position: relative;
-    border-bottom: 1px solid #eee;
+    width: 100% !important;
+    height: 90px !important;
+    position: relative !important;
+    border-bottom: 1px solid #eee !important;
 }
 
 #header {
-    width: 87%;
-    height: 62px;
-    margin: auto;
-    position: relative;
+    width: 87% !important;
+    height: 62px !important;
+    margin: auto !important;
+    position: relative !important;
 }
 
 #header h1.hd-logo {
-    position: absolute;
-    left: 5px;
-    top: -26px;
+    position: absolute !important;
+    left: 5px !important;
+    top: -26px !important;
 }
 
 #hd-logo-svg {
 }
 
 #hd-search {
-    position: absolute;
-    right: 240px;
-    left: 140px;
-    top: 29px;
+    position: absolute !important;
+    right: 240px !important;
+    left: 140px !important;
+    top: 29px !important;
 }
 
 #hd-search:focus {
-	box-shadow: none;
+	box-shadow: none !important;
 }
 
 #hd-icon-search {
-	z-index: 2;
-	position: absolute;
-	left: 12px;
-	top: 10px;
-	color:#ccc;
+	z-index: 2 !important;
+	position: absolute !important;
+	left: 12px !important;
+	top: 10px !important;
+	color:#ccc !important;
 }
 
 .hd-searchBox {
-	box-shadow: none;
-	z-index:1;
-    padding-left: 42px;
-    padding-bottom: 5px;
-    width: 100%;
-    height: 35px;
-    border: none;
-    border-radius: 10px;
-    padding-top: 5px;
-    background: #eee;
-    transform: perspective(1px) translateZ(0);
-    box-shadow: 0 0 1px transparent;
-    overflow: hidden;
-    transition-duration: 0.5s;
-    transition-property: background-color;
+	box-shadow: none !important;
+	z-index:1 !important;
+    padding-left: 42px !important;
+    padding-bottom: 5px !important;
+    width: 100% !important;
+    height: 35px !important;
+    border: none !important;
+    border-radius: 10px !important;
+    padding-top: 5px !important;
+    background: #eee !important;
+    transform: perspective(1px) translateZ(0) !important;
+    box-shadow: 0 0 1px transparent !important;
+    overflow: hidden !important;
+    transition-duration: 0.5s !important;
+    transition-property: background-color !important;
 }
 
 .hd-searchBox:focus {
-	box-shadow: none;
-    background: #fff;
-    border: 1px solid #ccc;
+	box-shadow: none !important;
+    background: #fff !important;
+    border: 1px solid #ccc !important;
 }
 
 #hd-nav {
-    float: right;
-    margin-right: 20px;
-    margin-top: 32px;
+    float: right !important;
+    margin-right: 20px !important;
+    margin-top: 32px !important;
 }
 
 #hd-gnb>li {
-    display: block;
-    float: left;
-    text-align: center;
-    margin-left: 12px;
-    border-radius: 5px;
-    cursor: pointer;
+    display: block !important;
+    float: left !important;
+    text-align: center !important;
+    margin-left: 12px !important;
+    border-radius: 5px !important;
+    cursor: pointer !important;
 }
 
 #hd-gnb>li:hover,
@@ -87,298 +87,297 @@
 
 /* 
 #hd-gnb>li>a {
-    padding: 2px 1px;
-    border-bottom: 3px solid #eee;
-    text-align: right;
-    font-weight: 500;
-    display: block;
-    font-size: 12px;
-    color: #333;
+    padding: 2px 1px !important;
+    border-bottom: 3px solid #eee !important;
+    text-align: right !important;
+    font-weight: 500 !important;
+    display: block !important;
+    font-size: 12px !important;
+    color: #333 !important;
     
    sweep-to-left
-    display: inline-block;
-    vertical-align: middle;
-    transform: perspective(1px) translateZ(0);
-    box-shadow: 0 0 1px transparent;
-    position: relative;
-    transition-property: color;
-    transition-duration: 0.3s;
-    margin: 0px; 
+    display: inline-block !important;
+    vertical-align: middle !important;
+    transform: perspective(1px) translateZ(0) !important;
+    box-shadow: 0 0 1px transparent !important;
+    position: relative !important;
+    transition-property: color !important;
+    transition-duration: 0.3s !important;
+    margin: 0px !important; 
 }
 
 #hd-gnb>li>a:hover,
 #hd-gnb>li>a:focus {
-	text-decoration: none;
-	border-bottom: 2px solid #56eda8;
-	color: #56eda8;
+	text-decoration: none !important;
+	border-bottom: 2px solid #56eda8 !important;
+	color: #56eda8 !important;
 }
 
 
 sweep-to-left:before
 #hd-gnb>li>a:before {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: #56eda8;
-    transform: scaleX(0);
-    transition-duration: 0.3s;
-    transition-timing-function: ease-out;
+    content: "" !important;
+    position: absolute !important;
+    z-index: -1 !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    background: #56eda8 !important;
+    transform: scaleX(0) !important;
+    transition-duration: 0.3s !important;
+    transition-timing-function: ease-out !important;
 }
 
 #hd-gnb>li>a:hover:before {
-    transform: scaleX(1);
+    transform: scaleX(1) !important;
 } */
 
 #hd-gnb>li:last-child>a {
-    margin-right: 0px;
+    margin-right: 0px !important;
 }
 
 #hd-gnb>li>ul {
-	z-index: 200;
-    position: absolute;
-    top: 120px;
-    background: #fff;
-    border: 1px solid #eee;
-    border-radius: 5px;
-    box-shadow: 2px 2px 5px #999;
+	z-index: 200 !important;
+    position: absolute !important;
+    top: 120px !important;
+    background: #fff !important;
+    border: 1px solid #eee !important;
+    border-radius: 5px !important;
+    box-shadow: 2px 2px 5px #999 !important;
 }
 
 #hd-gnb>li>ul.hd-gnb-sub>li>a {
-    display: block;
-    font-size: 12px;
+    display: block !important;
+    font-size: 12px !important;
 }
 
 /* upload detail css */
 #hd-gnb li:first-child .hd-gnb-sub {
-    width: 150px;
-    height: 50px;
-    text-align: center;
+    width: 150px !important;
+    height: 50px !important;
+    text-align: center !important;
 }
 
 #hd-gnb li:first-child .hd-gnb-sub li a {
-    font-size: 12px;
-    line-height: 30px;
-    margin: 10px;
-    border-radius: 10px;
+    font-size: 12px !important;
+    line-height: 30px !important;
+    margin: 10px !important;
+    border-radius: 10px !important;
 }
 #hd-gnb li:first-child .hd-gnb-sub li:hover a {
-    background: #eee;
+    background: #eee !important;
 }
 
 /* message detail css*/
 #hd-gnb li:nth-child(2) .hd-gnb-sub {
-    width: 220px;
-    height: 300px;
-    text-align: center;
+    width: 220px !important;
+    height: 300px !important;
+    text-align: center !important;
 }
 
 .hd-msg-tab {
-    display: inline-block;
-    width:96%;
-    background: #eee;
-    border-radius: 10px;
+    display: inline-block !important;
+    width:96% !important;
+    background: #eee !important;
+    border-radius: 10px !important;
     margin-top:5px
 }
 
 .hd-msg-tab>span{
-    display: inline-block;
-    width: 96%;
-    border-radius: 10px;
-    margin:2px;
+    display: inline-block !important;
+    width: 96% !important;
+    border-radius: 10px !important;
+    margin:2px !important;
 }
 
 .hd-msg-tab>span:FIRST-CHILD{
-    margin-top: 4px;
+    margin-top: 4px !important;
 }
 
 .hd-msg-tab>span:NTH-CHILD(2){
-    margin-bottom: 4px;
+    margin-bottom: 4px !important;
 }
 
 .hd-tab-msg {
-    background: #fff;
+    background: #fff !important;
 }
 
 .hd-tab-bot {
-    height: 30px;
-    background: #0084ff;
-    line-height: 30px;
-    padding-top: 5px;
+    height: 30px !important;
+    background: #0084ff !important;
+    line-height: 30px !important;
+    padding-top: 5px !important;
 }
 
 
 .hd-msg-tab a{
-    font-size: 11px;
-    line-height: 30px;
-    font-weight: 500;
+    font-size: 11px !important;
+    line-height: 30px !important;
+    font-weight: 500 !important;
 }
 
 .hd-msg-txt {
-    display: block;
-    width: 100%; 
-    margin-top:5px;
-    font-size: 11px;
-    line-height: 20px;
-    color:#999;
-    text-shadow: 1px 1px #fff;
-    background: #eee;
+    display: block !important;
+    width: 100% !important; 
+    margin-top:5px !important;
+    font-size: 11px !important;
+    line-height: 20px !important;
+    color:#999 !important;
+    text-shadow: 1px 1px #fff !important;
+    background: #eee !important;
 }
 
 .firstMsgList {
-    clear: both;
-    padding: 0px;
-    margin-bottom: 10px;
+    clear: both !important;
+    padding: 0px !important;
+    margin-bottom: 10px !important;
 }
 
 .hd-msgList {
-    border-bottom: 1px solid #eee;
-    margin: auto;
-    height: 60px;
-    text-align: left;
-    padding: 10px 5px 5px 5px;
-    transform: perspective(1px) translateZ(0);
-    box-shadow: 0 0 1px transparent;
-    overflow: hidden;
-    transition-duration: 0.3s;
-    transition-property: background-color;
+    border-bottom: 1px solid #eee !important;
+    margin: auto !important;
+    height: 60px !important;
+    text-align: left !important;
+    padding: 10px 5px 5px 5px !important;
+    transform: perspective(1px) translateZ(0) !important;
+    box-shadow: 0 0 1px transparent !important;
+    overflow: hidden !important;
+    transition-duration: 0.3s !important;
+    transition-property: background-color !important;
 }
 
 .hd-msgList:hover {
-    background-color: #eee;
+    background-color: #eee !important;
 }
 
 .hd-receive-msg-list02 {
-    padding: 0px;
+    padding: 0px !important;
 }
 
 .msgUserPic {
-    width: 40px;
-    height: 40px;
-    background: #eee;
-    border-radius: 50%;
-    float: left;
-    margin-right: 15px;
+    width: 40px !important;
+    height: 40px !important;
+    background: #eee !important;
+    border-radius: 50% !important;
+    float: left !important;
+    margin-right: 15px !important;
 }
 
 .msgUserId {
-    margin-top: 6px;
-    margin-bottom: 6px;
-    font-size: 13px;
-    font-family: "nanumB";
-    display: block;
-    text-align: left;
+    margin-top: 6px !important;
+    margin-bottom: 6px !important;
+    font-size: 13px !important;
+    display: block !important;
+    text-align: left !important;
 }
 
 .userMsg {
-    font-size: 12px;
-    color: #aaa;
+    font-size: 12px !important;
+    color: #aaa !important;
 }
 
 /* my account detail css */
 #hd-gnb>li:LAST-CHILD {
-	border-radius: 0px;
-	border-left: 1px solid #eee;
-	padding-left: 10px;
-	padding-right: 10px;
+	border-radius: 0px !important;
+	border-left: 1px solid #eee !important;
+	padding-left: 10px !important;
+	padding-right: 10px !important;
 }
 
 img.hd-my-img {
-	width: 26px;
-	border-radius: 50%;
-	margin: 3px;
+	width: 26px !important;
+	border-radius: 50% !important;
+	margin: 3px !important;
 }
 
 span.hd-my-nick {
-	display: inline-block;
-	margin-top: 10px;
-	margin-left: 2px;
-	font-weight: 500;
+	display: inline-block !important;
+	margin-top: 10px !important;
+	margin-left: 2px !important;
+	font-weight: 500 !important;
 }
 
 /* 
 #hd-gnb li:last-child .hd-gnb-sub {
-    width: 200px;
-    text-align: center;
+    width: 200px !important;
+    text-align: center !important;
 }
 .hd-sub-account-bar {
-    height: 24px;
-    line-height: 24px;
-    font-size: 12px;
-    text-shadow: 1px 1px #fff;
-    padding: 0px 10px;
-    border-bottom: 1px solid #ddd;
-    background: #eee;
+    height: 24px !important;
+    line-height: 24px !important;
+    font-size: 12px !important;
+    text-shadow: 1px 1px #fff !important;
+    padding: 0px 10px !important;
+    border-bottom: 1px solid #ddd !important;
+    background: #eee !important;
 }
 
 .hd-sub-account-bar span {
 }
 
 .hd-account-bar-id {
-    float: left;
-    font-size: 11px;
-    font-weight: 500;
+    float: left !important;
+    font-size: 11px !important;
+    font-weight: 500 !important;
 }
 
 .hd-account-bar-logout {
-    float: right;
-    font-size: 11px;
-    color: #777;
+    float: right !important;
+    font-size: 11px !important;
+    color: #777 !important;
 }
 
 .hd-sub-account {
-    margin-top: 9px; 
-    height: 36px;
+    margin-top: 9px !important; 
+    height: 36px !important;
 }
 .hd-account {
-    display: block;
-    width:100%;
-    height: 52px;
-    border-bottom: 1px solid #eee;
+    display: block !important;
+    width:100% !important;
+    height: 52px !important;
+    border-bottom: 1px solid #eee !important;
 }
 .hd-my-img {
-    float: left;
-    margin-left: 10px;
-    width: 42px;
-    height: 42px;
-    border-radius: 50%;
-    border: 1px solid #eee;
-    overflow: hidden;
+    float: left !important;
+    margin-left: 10px !important;
+    width: 42px !important;
+    height: 42px !important;
+    border-radius: 50% !important;
+    border: 1px solid #eee !important;
+    overflow: hidden !important;
 }
 .hd-my-nick, .hd-my-email {
-    float: left;
-    margin-left: 21px;
+    float: left !important;
+    margin-left: 21px !important;
 }
 .hd-my-nick {
-    font-size: 14px;
-    line-height: 25px;
+    font-size: 14px !important;
+    line-height: 25px !important;
 }
 .hd-my-email {
-    color: #bbb;
+    color: #bbb !important;
 }
 .hd-sub-account-list {
-    margin-top: 30px;
-    text-align: center;
+    margin-top: 30px !important;
+    text-align: center !important;
 }
 .hd-sub-account-list ul li {
-    margin: 2px 5px 2px 5px;
-    font-size: 12px;
-    line-height: 30px;
-    border-radius: 10px;
+    margin: 2px 5px 2px 5px !important;
+    font-size: 12px !important;
+    line-height: 30px !important;
+    border-radius: 10px !important;
 }
 .hd-sub-account-list ul li:first-child {
 }
 .hd-sub-account-list ul li:hover {
-    background: #eee;
+    background: #eee !important;
 }
 .hd-sub-account-list {
-    margin-bottom: 12px;
+    margin-bottom: 12px !important;
 }
 .hd-account-list-wdr  {
-    margin-top: 10px;
+    margin-top: 10px !important;
 }
 .hd-account-list-info {
 }
@@ -386,15 +385,15 @@ span.hd-my-nick {
 
 /* Sub Menu Position control */
 #hd-gnb li:first-child ul.hd-gnb-sub {
-    right: 130px;
+    right: 130px !important;
 }
 
 #hd-gnb li:nth-child(2) ul.hd-gnb-sub {
-    right: 40px;
+    right: 40px !important;
 }
 
 #hd-gnb li:last-child ul.hd-gnb-sub {
-    right: 30px;
+    right: 30px !important;
 }
 /* ========================================= */
 

@@ -24,119 +24,6 @@
 </head>
 
 <body>
-
-	<!-- ============================== Add Wardrobe Modal ============================== -->
-	<div class="modal fade" id="addWdrModal" tabindex="-1" role="dialog"
-		aria-labelledby="wdrModalLabel" aria-hidden="true">
-		<div class="modal-dialog">
-			<form name="wdr-name">
-				<div class="modal-content">
-
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal"
-							aria-label="Close">
-							<span aria-hidden="true">&times;</span>
-						</button>
-						<h4 class="modal-title">CREATE WARDROBE</h4>
-					</div>
-
-					<div class="modal-body">
-						<input type="hidden" name="user_no" id="user_no"
-							value="${user.user_no}">
-						 <input type="text" name="cls_name" id="addWdr-input" class="form-control"
-							placeholder="옷장 이름을 입력해주세요.">
-							<p class="wdrNameValidate"></p>
-					</div>
-
-					<div class="modal-footer">
-						<button type="submit" id="wdr-create-btn" 
-						               class="btn btn-default" disabled="disabled">CREATE</button>
-					</div>
-
-				</div>
-				<!-- /.modal-content -->
-			</form>
-			<!-- /.form -->
-		</div>
-		<!-- /.modal-dialog -->
-	</div>
-	<!-- /.modal -->
-	<!-- ---------------------------------------------------------------------------------------------------->
-
-	<!-- ============================== update Wardrobe Modal ============================== -->
-	<div class="modal fade" id="updateWdrModal" tabindex="-1" role="dialog"
-		aria-labelledby="wdrModalLabel" aria-hidden="true">
-		<div class="modal-dialog">
-			<form name="wdr-update">
-				<div class="modal-content">
-
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal"
-							aria-label="Close">
-							<span aria-hidden="true">&times;</span>
-						</button>
-						<h4 class="modal-title">옷장 수정</h4>
-					</div>
-
-					<div class="modal-body">
-						<input type="hidden" name="user_no" id="user_no"
-							value="${user.user_no}">
-						 <input type="text" name="cls_name" id="updateWdr-input" class="form-control"
-							placeholder="옷장 이름을 입력해주세요.">
-							<p class="wdrUpdateValidate"></p>
-					</div>
-
-					<div class="modal-footer">
-						<button type="submit" id="wdr-modify-btn" 
-						               class="btn btn-default" disabled="disabled">MODIFY</button>
-					</div>
-				</div>
-				<!-- /.modal-content -->
-			</form>
-			<!-- /.form -->
-		</div>
-		<!-- /.modal-dialog -->
-	</div>
-	<!-- /.modal -->
-	<!-- ---------------------------------------------------------------------------------------------------->
-
-	<!-- ============================== delete Wardrobe Modal ============================== -->
- 	<div class="modal fade bs-example-modal-sm" id="deleteWdrModal" tabindex="-1" role="dialog"
-		aria-labelledby="wdrModalLabel" aria-hidden="true">
-		<div class="modal-dialog modal-sm">
-			<form name="wdr-update">
-				<div class="modal-content">
-
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal"
-							aria-label="Close">
-							<span aria-hidden="true"> &times; </span>
-						</button>
-						<h4 class="modal-title"> 옷장을 삭제할까요? </h4>
-					</div>
-
-					<div class="modal-body">
-						<input type="hidden" name="user_no" id="user_no"
-							value="${user.user_no}">
-							<p class="wdrDeleteMsg"> 삭제한 후에는 이 작업을 실행 취소할 수 없습니다! </p>
-					</div>
-
-					<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal"> 취소 </button>
-	                    <button type="submit" class="wdr-del-submit btn btn-primary"> 확인 </button>
-					</div>
-
-				</div>
-				<!-- /.modal-content -->
-			</form>
-			<!-- /.form -->
-		</div>
-		<!-- /.modal-dialog -->
-	</div>
-	<!-- /.modal -->
-	<!-- ---------------------------------------------------------------------------------------------------->
-
-
 	<div id="wdr-container">
 		<!-- Wardrobe Header -->
 		<!-- User Profile Picture -->
@@ -180,24 +67,6 @@
 				</div>
 			</div>
 			<!-- // wardrobeUserInfo -->
-
-			<!-- Setting Button -->
-			<div class="wdr-btn col-xs-12 col-sm-4 col-md-1">
-				<ul>
-					<li class="create-wdr">
-					   <a href="#" data-toggle="modal" 
-					        data-target="#addWdrModal" role="button"> ADD </a>
-			        </li>
-					<!-- 
-					<li class="wdr-update-user">
-					   <a href="#"> SETTING </a>
-				   </li>
-    				  -->
-					<li class="wdr-setting">
-					   <a href="#"> SET </a>
-				   </li>
-				</ul>
-			</div>
 		</div>
 		<!--// Wardrobe Header -->
 
@@ -247,7 +116,6 @@
 				</div>
 			</div>
 		</div>
-		<!-- javaScript 로 수정해야 할 영역 append element -->
 	</div>
 	<!-- //wardrobeContainer -->
 
