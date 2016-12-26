@@ -98,8 +98,9 @@
 
 					<!-- gnb03 my account modify-->
 					<li>
-					   <a href="/wardrobe/getWardrobeList?user_no=${user.user_no}" class=""
-                                        draggable="false">
+					   <a href="/wardrobe/getWardrobeList?user_no=${user.user_no}" 
+					        class="" draggable="false">
+                            <!-- 일반 유저 로그인 -->
 	    					<c:if test="${!empty user }">
 							    <!-- 프로필 사진이 null일 때 -->
 							    <c:if test="${empty user.phot_path}">
@@ -116,7 +117,7 @@
 		                         <!-- <span class="hd-my-email"> ${user.email} </span>  -->
 	                       </c:if>
 	                       
-	                      <!-- facebook으로 로그인 시 --> 
+	                      <!-- facebook으로 로그인 시 -->
 	                       <c:if test="${!empty  faceUser}">
 		                         <!-- facebook 프로필 사진이 null일 때 -->
 		                         <c:if test="${empty   faceUser.phot_path}">

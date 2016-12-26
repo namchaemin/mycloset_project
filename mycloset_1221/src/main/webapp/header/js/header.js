@@ -39,11 +39,11 @@ function headerIcon() {
 		$(this).attr("src", "../header/css/images/icon-upload.svg");
 	});
 
-	$(".hd-icon-chat").on("mouseover",function() {
+/*	$(".hd-icon-chat").hover(function() {
 		$(this).attr("src", "../header/css/images/icon-chat_hover.svg");
-	}/*, function() {
+	}, function() {
 		$(this).attr("src", "../header/css/images/icon-chat.svg");
-	}*/);
+	});*/
 	
 }
 
@@ -54,6 +54,7 @@ function headerGnb() {
 //	var $list = $(".hd-gnb-sub")
 //	var th = $list.height()
 	var isPlay = false
+
 	
 	$(".hd-icon-chat").on("click", function () {
     	
@@ -61,6 +62,7 @@ function headerGnb() {
 //            $(this).parent().next("ul.hd-msg").show().animate({opacity:1, top:85}, 300);
             $("ul.hd-msg").show().animate({opacity:1, top:85}, 300);
             $(".hd-icon-chat").attr("src", "../header/css/images/icon-chat_hover.svg");
+
         } else {
         	$("ul.hd-msg").hide("slow");
         	$(".hd-icon-chat").attr("src", "../header/css/images/icon-chat.svg");

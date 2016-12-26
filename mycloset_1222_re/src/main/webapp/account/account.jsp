@@ -126,6 +126,8 @@
 			var pwdsize = $("#inputPwd").val();
 			var nick = $("#inputName").val();
 			var email = $("#inputEmail").val();
+			
+			alert(nick);
 		
 				if (pwdsize.length > 2) {
 				$.ajax({

@@ -2,6 +2,7 @@ $(function() {
 	
 	wdrValidate();
 	wdrPostCount();
+	wdrIcon();
 	wdrThumbnail();
 	wdrBtnGroup();
 	wdrAccount();
@@ -131,6 +132,29 @@ function wdrThumbnail() {
 			backgroundSize : "120%"}, 300);
 	});
 
+}
+
+/* 옷장버튼 호버 이벤트*/
+function wdrIcon() {
+	
+	$(".wdr-icon-add").hover(function() {
+		$(this).attr("src", "../wardrobe/css/images/icon-add_b_hover.svg");
+	}, function() {
+		$(this).attr("src", "../wardrobe/css/images/icon-add_b.svg");
+	});
+	
+	$(".wdr-icon-setting").hover(function() {
+		$(this).attr("src", "../wardrobe/css/images/icon-setting_b_hover.svg");
+	}, function() {
+		$(this).attr("src", "../wardrobe/css/images/icon-setting_b.svg");
+	});
+	
+	$(".wdr-icon-logout").hover(function() {
+		$(this).attr("src", "../wardrobe/css/images/icon-logout_b_hover.svg");
+	}, function() {
+		$(this).attr("src", "../wardrobe/css/images/icon-logout_b.svg");
+	});
+	
 }
 
 

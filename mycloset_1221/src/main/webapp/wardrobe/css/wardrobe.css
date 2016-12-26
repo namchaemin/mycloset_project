@@ -1,123 +1,123 @@
-@CHARSET "UTF-8" !important;
+@CHARSET "UTF-8";
 
 a {
-    text-decoration: none !important;
+    text-decoration: none;
 }
 a:visited,
 a:hover,
 a:active,
 a:focus {
-    text-decoration: none !important;
+    text-decoration: none;
 }
 
 /* ---------- modal css ---------- */
 #addWdr-input,
 #updateWdr-input {
-    border-radius: 5px !important;
-    border: none !important;
-    background-color: #eee !important;
-    margin-bottom: 12px !important;
+    border-radius: 5px;
+    border: none;
+    background-color: #eee;
+    margin-bottom: 12px;
 }
 #addWdr-input:focus, 
 #updateWdr-input:focus {
-    border: 1px solid #ccc !important;
-    background-color: #fff !important;
+    border: 1px solid #ccc;
+    background-color: #fff;
 }
 
 .wdrNameValidate,
 .wdrUpdateValidate {
-	display: none !important;
-	margin-left: 5px !important;
-	font-size: 90% !important;
-	color: #bd081c !important;
+	display: none;
+	margin-left: 5px;
+	font-size: 90%;
+	color: #bd081c;
 }
 /*-----------------------------------------------*/
 
 #wdr-container {
-	width: 80% !important;
-	margin: auto !important;
-	margin-top: 60px !important;
-	margin-bottom: 100px !important;
+	width: 80%;
+	margin: auto;
+	margin-top: 60px;
+	margin-bottom: 100px;
 }
 
 #wdr-user-row {
-	margin-bottom: 40px !important;
+	margin-bottom: 40px;
 }
 
 /* User Profile Picture */
 #wdr-user {
-	text-align: center !important;
-	overflow: hidden !important;
+	text-align: center;
+	overflow: hidden;
 }
 
 .wdr-userImg {
-	width: 140px !important;
-	margin: auto !important;
-	margin-top: 10px !important;
+	width: 140px;
+	margin: auto;
+	margin-top: 10px;
 }
 
 /* User Profile Info*/
 .wdr-userInfo {
-	float: left !important;
+	float: left;
 }
 
 .wdr-userId {
-	float: left !important;
-	font-size: 30px !important;
-	font-weight: 500 !important;
+	float: left;
+	font-size: 30px;
+	font-weight: 500;
 }
 
 #wdr-user-follow, 
 #wdr-user-modify {
-    margin-left: 40px !important;
-    margin-top: 12px !important;
+    margin-left: 40px;
+    margin-top: 12px;
 }
 
 #wdr-user-unfollow {
-    display: none !important;
-	color: #fff !important;
-    margin-left: 40px !important;
-    margin-top: 12px !important;
+    display: none;
+	color: #fff;
+    margin-left: 40px;
+    margin-top: 12px;
 }
 
 .wdr-follow {
-	text-align: left !important;
-	margin-top: 30px !important;
-	margin-bottom: 70px !important;
+	text-align: left;
+	margin-top: 30px;
+	margin-bottom: 70px;
 }
 
 .wdr-follow li {
-	float: left !important;
-	vertical-align: middle !important;
+	float: left;
+	vertical-align: middle;
 }
 
 .wdr-follwers {
-    float: left !important;
+    float: left;
 }
 
 .wdr-follow li h5 {
-	float: left !important;
-	font-size: 16px !important;
-	color: #333 !important;
-	font-weight: 300 !important;
-    margin: 0px 10px 0px 0px !important;
+	float: left;
+	font-size: 16px;
+	color: #333;
+	font-weight: 300;
+    margin: 0px 10px 0px 0px;
   
 }
 
 .wdr-follow li p {
-	float: left !important;
-	font-size: 16px !important;
-	font-weight: 500 !important;
-    margin-right: 30px !important;
-    margin-top: 2px !important;
+	float: left;
+	font-size: 16px;
+	font-weight: 500;
+    margin-right: 30px;
+    margin-top: 2px;
 }
 
-#wdr-exp-wrap { !important;
-	display: block !important;
-	clear: both !important;
-	font-size: 13px !important;
-    line-hight: 1.7 !important;
-    color: #aaa !important;
+#wdr-exp-wrap {;
+	display: block;
+	clear: both;
+	font-size: 13px;
+    line-hight: 1.7;
+    color: #aaa;
 }
 
 .wdr-exp{
@@ -126,151 +126,152 @@ a:focus {
 
 /* Setting Button*/
 .wdr-btn {
-	padding-right: 10px !important;
+	padding-right: 10px;
 }
 
 .wdr-btn>ul {
-	margin-top: 20px !important;
+	margin-top: 20px;
 }
 
 .wdr-btn>ul>li {
-	margin-top: 8px !important;
 }
 
+/*
 .wdr-btn>ul>li>a {
-	display: inline-block !important;
-	border-radius: 5px !important;
-	width: 42px !important;
-	height: 42px !important;
-	line-height: 42px !important;
-	border-radius: 50% !important;
-	text-align: center !important;
-	font-size: 10px !important;
-	font-weight: 500 !important;
-	border: 1px solid #ccc !important;
-	color: #555 !important;
-	
-	/*Fade*/
-	display: inline-block !important;
-	vertical-align: middle !important;
-	-webkit-transform: perspective(1px) translateZ(0) !important;
-	transform: perspective(1px) translateZ(0) !important;
-	box-shadow: 0 0 1px transparent !important;
-	overflow: hidden !important;
-	-webkit-transition-duration: 0.3s !important;
-	transition-duration: 0.3s !important;
-	-webkit-transition-property: color, background-color !important;
-	transition-property: color, background-color !important;
+	display: inline-block;
+	border-radius: 5px;
+	width: 42px;
+	height: 42px;
+	line-height: 42px;
+	border-radius: 50%;
+	text-align: center;
+	font-size: 10px;
+	font-weight: 500;
+	border: 1px solid #ccc;
+	color: #555;
+*/	
+	/*Fade
+	display: inline-block;
+	vertical-align: middle;
+	-webkit-transform: perspective(1px) translateZ(0);
+	transform: perspective(1px) translateZ(0);
+	box-shadow: 0 0 1px transparent;
+	overflow: hidden;
+	-webkit-transition-duration: 0.3s;
+	transition-duration: 0.3s;
+	-webkit-transition-property: color, background-color;
+	transition-property: color, background-color;
 }
 
 .wdr-btn>ul>li>a:hover, 
 .wdr-btn>ul>li>a :focus, 
 .wdr-btn>ul>li>a:active {
-	background-color: #56eda8 !important;
-	text-decoration: none !important;
+	background-color: #56eda8;
+	text-decoration: none;
 }
+*/
 
 /* Wardrobe List Content */
 ul.wdr-postList>li {
-	float: left !important;
-	margin-left: 2px !important;
-	margin-right: 2px !important;
-	margin-top: 17px !important;
+	float: left;
+	margin-left: 2px;
+	margin-right: 2px;
+	margin-top: 17px;
 }
 
 .wdr-postGrid {
-	background: #eee !important;
-	margin: auto !important;
-	height: 120px !important;
-	margin-bottom: 23px !important;
-	border-radius: 10px !important;
-	overflow: hidden !important;
+	background: #eee;
+	margin: auto;
+	height: 120px;
+	margin-bottom: 23px;
+	border-radius: 10px;
+	overflow: hidden;
 }
 
 .wdr-title {
-	display: block !important;
-	float: left !important;
-	margin-top: 10px !important;
-	margin-left: 10px !important;
-	font-size: 15px !important;
-	font-weight: 500 !important;
-	text-shadow: 1px 1px #fff !important;
+	display: block;
+	float: left;
+	margin-top: 10px;
+	margin-left: 10px;
+	font-size: 15px;
+	font-weight: 500;
+	text-shadow: 1px 1px #fff;
 }
 
 .wdr-post-cnt {
-	clear: both !important;
-	display: block !important;
-	font-size: 10px !important;
-	text-shadow: 1px 1px #fff !important;
-	color: #999 !important;
-	margin-left: 11px !important;
-	padding-top: 5px !important;
+	clear: both;
+	display: block;
+	font-size: 10px;
+	text-shadow: 1px 1px #fff;
+	color: #999;
+	margin-left: 11px;
+	padding-top: 5px;
 }
 
 .wdr-btn-group {
-    position: absolute !important;
-    right: 10px !important;
-    bottom: 19px !important;
+    position: absolute;
+    right: 10px;
+    bottom: 19px;
 }
 
 
 #wdr-list-wrap {
-	clear: both !important;
-	margin: 0 !important;
+	clear: both;
+	margin: 0;
 }
 
 #wdr-thumb-wrap {
-	margin: 0 !important;
+	margin: 0;
 }
 
 .wdr-content {
-	padding: 5px !important;
+	padding: 5px;
 }
 
 .wdr-grid {
-	width: 100% !important;
-	height: 250px !important;
-	border-radius: 10px !important;
-	background: #fff !important;
-	padding: 1px !important;
-	margin: 3px !important;
-	cursor: pointer !important;
+	width: 100%;
+	height: 250px;
+	border-radius: 10px;
+	background: #fff;
+	padding: 1px;
+	margin: 3px;
+	cursor: pointer;
 	
 	 /*Fade*/
-    display: inline-block !important;
-    vertical-align: middle !important;
-    -webkit-transform: perspective(1px) translateZ(0) !important;
-    transform: perspective(1px) translateZ(0) !important;
-    box-shadow: 0 0 1px transparent !important;
-    overflow: hidden !important;
-    -webkit-transition-duration: 0.3s !important;
-    transition-duration: 0.3s !important;
-    -webkit-transition-property: color, background-color !important;
-    transition-property: color, background-color !important;
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px transparent;
+    overflow: hidden;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: color, background-color;
+    transition-property: color, background-color;
 }
 
 .wdr-grid:hover, 
 .wdr-grid:focus, 
 .wdr-grid:active {
-    background-color: #f5f5f5 !important;
-    text-decoration: none !important;
+    background-color: #f5f5f5;
+    text-decoration: none;
 }
 
 #wdr-thumb-wrap {
-	width: 98% !important;
-	margin: 3px !important;
-	overflow: hidden !important;
-	margin: 3px !important;
-	overflow: hidden !important;
-	border-radius: 8px !important;
+	width: 98%;
+	margin: 3px;
+	overflow: hidden;
+	margin: 3px;
+	overflow: hidden;
+	border-radius: 8px;
 }
 
 .wdr-thumb {
-	padding:1px !important;
-	overflow: hidden !important;
-	height: 90px !important;
-	background: #eee !important;
-	background-size: 120% !important;
+	padding:1px;
+	overflow: hidden;
+	height: 90px;
+	background: #eee;
+	background-size: 120%;
 }
 
 .wdr-thumb:nth-child(1), 
@@ -279,21 +280,21 @@ ul.wdr-postList>li {
 }
 .wdr-thumb:nth-child(2), 
 .wdr-thumb:nth-child(5) {
-        margin-left: 1px !important;
+        margin-left: 1px;
 }
 .wdr-thumb:nth-child(3), 
 .wdr-thumb:nth-child(6) {
-        margin-left: 1px !important;
+        margin-left: 1px;
 }
 .wdr-thumb:nth-child(1), 
 .wdr-thumb:nth-child(2), 
 .wdr-thumb:nth-child(3) {
-        margin-top: -1px !important;
+        margin-top: -1px;
 }
 .wdr-thumb:nth-child(4), 
 .wdr-thumb:nth-child(5), 
 .wdr-thumb:nth-child(6) {
-        margin-top: 1px !important;
+        margin-top: 1px;
 }
 
 
@@ -301,66 +302,66 @@ ul.wdr-postList>li {
 /*=== Content Wardrobe Box Thumbnail: FIRST-CHILD ===*/
 /* js로 수정 할 영역 */
 #wdr-list-box:FIRST-CHILD .wdr-thumb:NTH-CHILD(1) {
-	background: url(images/thumb01.jpg) center !important;
-	background-size: 120% !important;
+	background: url(images/thumb01.jpg) center;
+	background-size: 120%;
 }
 
 #wdr-list-box:FIRST-CHILD .wdr-thumb:NTH-CHILD(2) {
-	background: url(images/thumb02.jpg) center !important;
-	background-size: 120% !important;
+	background: url(images/thumb02.jpg) center;
+	background-size: 120%;
 }
 
 #wdr-list-box:FIRST-CHILD .wdr-thumb:NTH-CHILD(3) {
-	background: url(images/thumb03.jpg) center !important;
-	background-size: 120% !important;
+	background: url(images/thumb03.jpg) center;
+	background-size: 120%;
 }
 
 #wdr-list-box:FIRST-CHILD .wdr-thumb:NTH-CHILD(4) {
-	background: url(images/thumb04.jpg) center !important;
-	background-size: 120% !important;
+	background: url(images/thumb04.jpg) center;
+	background-size: 120%;
 }
 
 #wdr-list-box:FIRST-CHILD .wdr-thumb:NTH-CHILD(5) {
-	background: url(images/thumb05.jpg) center !important;
-	background-size: 120% !important;
+	background: url(images/thumb05.jpg) center;
+	background-size: 120%;
 }
 
 #wdr-list-box:FIRST-CHILD .wdr-thumb:NTH-CHILD(6) {
-	background: url(images/thumb06.jpg) center !important;
-	background-size: 120% !important;
+	background: url(images/thumb06.jpg) center;
+	background-size: 120%;
 }
 
 /* ========================================================== */
 /*=== Content Wardrobe Box Thumbnail: FIRST-CHILD ===*/
 /* js로 수정 할 영역 */
 #wdr-list-box:FIRST-CHILD .wdr-thumb:NTH-CHILD(1) {
-	background: url(images/thumb01.jpg) center !important;
-	background-size: 120% !important;
+	background: url(images/thumb01.jpg) center;
+	background-size: 120%;
 }
 
 #wdr-list-box:FIRST-CHILD .wdr-thumb:NTH-CHILD(2) {
-	background: url(images/thumb02.jpg) center !important;
-	background-size: 120% !important;
+	background: url(images/thumb02.jpg) center;
+	background-size: 120%;
 }
 
 #wdr-list-box:FIRST-CHILD .wdr-thumb:NTH-CHILD(3) {
-	background: url(images/thumb03.jpg) center !important;
-	background-size: 120% !important;
+	background: url(images/thumb03.jpg) center;
+	background-size: 120%;
 }
 
 #wdr-list-box:FIRST-CHILD .wdr-thumb:NTH-CHILD(4) {
-	background: url(images/thumb04.jpg) center !important;
-	background-size: 120% !important;
+	background: url(images/thumb04.jpg) center;
+	background-size: 120%;
 }
 
 #wdr-list-box:FIRST-CHILD .wdr-thumb:NTH-CHILD(5) {
-	background: url(images/thumb05.jpg) center !important;
-	background-size: 120% !important;
+	background: url(images/thumb05.jpg) center;
+	background-size: 120%;
 }
 
 #wdr-list-box:FIRST-CHILD .wdr-thumb:NTH-CHILD(6) {
-	background: url(images/thumb06.jpg) center !important;
-	background-size: 120% !important;
+	background: url(images/thumb06.jpg) center;
+	background-size: 120%;
 }
 
 /* ========================================================== */
@@ -368,13 +369,13 @@ ul.wdr-postList>li {
 /*=== Content Wardrobe Box Thumbnail: FIRST-CHILD ===*/
 /* js로 수정 할 영역 */
 #wdr-list-box:NTH-CHILD(2) .wdr-thumb:NTH-CHILD(1) {
-	background: url(images/thumb04.jpg) center !important;
-	background-size: 120% !important;
+	background: url(images/thumb04.jpg) center;
+	background-size: 120%;
 }
 
 #wdr-list-box:NTH-CHILD(2) .wdr-thumb:NTH-CHILD(2) {
-	background: url(images/thumb02.jpg) center !important;
-	background-size: 120% !important;
+	background: url(images/thumb02.jpg) center;
+	background-size: 120%;
 }
 
 

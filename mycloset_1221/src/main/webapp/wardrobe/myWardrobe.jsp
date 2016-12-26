@@ -184,17 +184,25 @@
 				<ul>
 					<li class="create-wdr">
 					   <a href="#" data-toggle="modal" 
-					        data-target="#addWdrModal" role="button"> ADD </a>
+					        data-target="#addWdrModal" role="button">
+					        <img class="wdr-icon-add" 
+					                   src="../wardrobe/css/images/icon-add_b.svg" alt="add" />
+				       </a>
 			        </li>
-					<!-- 
+					
 					<li class="wdr-update-user">
-					   <a href="#"> SETTING </a>
-				   </li>
+					   <a href="#">
+					       <img class="wdr-icon-setting" 
+					                  src="../wardrobe/css/images/icon-setting_b.svg" alt="setting" />
+					   </a>
+				   
     				 
-					<li class="wdr-setting">
-					   <a href="#"> SET </a>
+					<li class="wdr-user-logout">
+					   <a href="#">
+					       <img class="wdr-icon-logout" 
+					                  src="../wardrobe/css/images/icon-logout_b.svg" alt="logout" />
+					   </a>
 				   </li>
-				    -->
 				</ul>
 			</div>
 		</div>

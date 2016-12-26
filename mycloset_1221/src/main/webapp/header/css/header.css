@@ -186,9 +186,16 @@ sweep-to-left:before
 
 .hd-msg-tab>span{
     display: inline-block;
-    width: 92%;
+    width: 96%;
     border-radius: 10px;
+    margin:2px;
+}
+
+.hd-msg-tab>span:FIRST-CHILD{
     margin-top: 4px;
+}
+
+.hd-msg-tab>span:NTH-CHILD(2){
     margin-bottom: 4px;
 }
 

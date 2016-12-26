@@ -15,6 +15,7 @@ nav, section, summary {
     border: 0;
     font-size: 100%;
     font: inherit;
+    font-family: "Roboto", sans-serif, "nanum";
     vertical-align: baseline;
 }
 
@@ -29,7 +30,7 @@ footer, header, hgroup, menu, nav, section {
 
 body {
     width: 100%;
-    font-family: "nanum", 'Open Sans', sans-serif;
+    font-family: "Roboto", sans-serif, "nanum";
     font-size: 12px;
     color: #333;
     line-height: 1.5;
@@ -66,7 +67,7 @@ li {
 }
 
 input, select, textarea, button {
-    font-family: "nanum";
+    font-family: "Roboto", sans-serif, "nanum";
     font-size: 12px;
     color: #333;
 }
@@ -125,7 +126,7 @@ caption, legend {
     top: 0
 }
 h1, h2, h3, h4, h5, h6 {
-    font-family: "nanum";
+    font-family: "Roboto", sans-serif, "nanum";
     font-size: 12px;
     color: #333;
 }
