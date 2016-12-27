@@ -108,6 +108,7 @@ public class UserController {
    * System.out.println("/user/updateUser : post"); User user = new User();
    * user.setEmail("강요셉@강요셉.com"); return user; }
    */
+  
   @RequestMapping(value = "updateUser", method = RequestMethod.POST)
   public @ResponseBody User updateUser(MultipartHttpServletRequest req, HttpSession session) throws Exception {
 
