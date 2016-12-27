@@ -127,7 +127,8 @@ public class UserController {
 
     return user;
   }
-
+  
+  /* 페이스북 계정 로그인 유저 정보 수정 */
   @RequestMapping(value = "faceupdateUser", method = RequestMethod.POST)
   public @ResponseBody User faceupdateUser(MultipartHttpServletRequest req, HttpSession session) throws Exception {
 
@@ -172,18 +173,28 @@ public class UserController {
   
   @RequestMapping(value = "login", method = RequestMethod.POST)
   public @ResponseBody User login(String email, String pwd, HttpSession session) throws Exception {
+
+    System.out.println("[userController] ::: logon ::: POST ::: ajax ");
     System.out.println("로그인안돼");
+    
+    // business logic
     User user = userService.getUser(email);
+    
     if (user.getPwd().trim().equals(pwd.trim())) {
-      System.out.println("세션");
       session.setAttribute("user", user);
+      System.out.println("[userController] ::: logon ::: POST ::: session.setAttribute(\"user\",user); ");
     }
+    
     return user;
   }
 
   @RequestMapping(value = "loginCheck", method = RequestMethod.POST)
   public @ResponseBody User loginCheck(String email) throws Exception {
-    System.out.println("체크메서드:" + email);
+
+    System.out.println("[userController] ::: loginCheck ::: POST ::: ajax ");
+    System.out.println("[userController] ::: loginCheck ::: parameter:email :  "+email);
+
+    // business logic
     User user = userService.getUser(email);
 
     return user;
