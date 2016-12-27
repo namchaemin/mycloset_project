@@ -123,6 +123,8 @@
 			var nick = $("#inputName").val();
 			var email = $("#inputEmail").val();
 			
+			alret("pwdsize : "+pwdsize+"<br/>nick : "+nick+"<br/>email : "+email);
+			
 			if (pwdsize.length > 2) {
 				$.ajax({
 					url : '/user/updateUser',
