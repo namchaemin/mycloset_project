@@ -99,6 +99,7 @@ public class UserController {
 
     System.out.println("[userController] updateUser ::: POST");
     
+    // Business Logic
     MultipartFile file = req.getFile("testFile");
     System.out.println("[userController] updateUser ::: POST ::: MultipartFile file ::: "+file);
 
@@ -134,6 +135,7 @@ public class UserController {
 
     System.out.println("[userController] faceupdateUser ::: POST ");
     
+    // Business Logic
     MultipartFile file = req.getFile("testFile");
     User user = new User();
     
@@ -177,7 +179,7 @@ public class UserController {
     System.out.println("[userController] ::: logon ::: POST ::: ajax ");
     System.out.println("로그인안돼");
     
-    // business logic
+    // Business Logic
     User user = userService.getUser(email);
     
     if (user.getPwd().trim().equals(pwd.trim())) {
@@ -194,7 +196,7 @@ public class UserController {
     System.out.println("[userController] ::: loginCheck ::: POST ::: ajax ");
     System.out.println("[userController] ::: loginCheck ::: parameter:email :  "+email);
 
-    // business logic
+    // Business Logic
     User user = userService.getUser(email);
 
     return user;
@@ -203,50 +205,48 @@ public class UserController {
   @RequestMapping(value = "facebook", method = RequestMethod.POST)
   public @ResponseBody User facebook(String email, HttpSession session) throws Exception {
 
-    System.out.println("email:" + email);
+    System.out.println("[userController] ::: facebook ::: POST ::: ajax ");
+    System.out.println("[userController] ::: facebook ::: parameter:email :  "+email);
+
+    // Business Logic
     User user = userService.getUser(email);
-    System.out.println("로그인 세션만들기");
 
     if (user != null) {
       session.setAttribute("faceUser", user);
+      System.out.println("[userController] ::: facebook ::: session.setAttribute(\"faceUser\",user); ");
     }
+    
     return user;
   }
 
   @RequestMapping(value = "fbaddUser", method = RequestMethod.POST)
-  public @ResponseBody void fbaddUser(String nick, String email, String pwd, String phot_path, HttpSession session)
-      throws Exception {
-    User user = new User();
+  public @ResponseBody void fbaddUser(String nick, String email, String pwd, String phot_path, 
+                                                                                                    HttpSession session) throws Exception {
+    
+    System.out.println("[userController] ::: fbaddUser ::: POST ::: ajax ");
+   
+    // Business Logic
+    User user = new User();    
     user.setNick(nick);
     user.setEmail(email);
     user.setPwd(pwd);
     user.setPhot_path(phot_path);
 
-    System.out.println("add세션만들기" + user);
+    System.out.println("[userController] ::: fbaddUser ::: domain : "+user);
     userService.addUser(user);
 
     if (user != null) {
       session.setAttribute("user", user);
+      System.out.println("[userController] ::: fbaddUser ::: session.setAttribute(\"user\",user); ");
     }
   }
 
-  // @RequestMapping("/logout.do")
-  /*
-   * @RequestMapping( value="logout", method=RequestMethod.GET ) public String
-   * logout(HttpSession session ) throws Exception{
-   * 
-   * System.out.println("/user/logout : POST");
-   * 
-   * session.invalidate(); session.invalidate();
-   * 
-   * return "redirect:..index.jsp"; }
-   */
-
-  // @RequestMapping("/checkDuplication.do")
+  
   @RequestMapping(value = "checkDuplication", method = RequestMethod.POST)
   public String checkDuplication(@RequestParam("email") String email, Model model) throws Exception {
 
-    System.out.println("여기 유저컨트롤러" + "/user/checkDuplication : POST");
+    System.out.println("[userController] ::: checkDuplication ::: POST ");
+
     // Business Logic
     boolean result = userService.checkDuplication(email);
     model.addAttribute("result", new Boolean(result));
@@ -255,13 +255,14 @@ public class UserController {
     return "forward:/user/checkDuplication.jsp";
   }
 
-  // @RequestMapping("/listUser.do")
+  
   @RequestMapping(value = "listUser")
   public String listUser(@ModelAttribute("search") Search search, Model model, HttpServletRequest request)
       throws Exception {
 
-    System.out.println("/user/listUser : GET / POST");
+    System.out.println("[userController] ::: listUser ");
 
+    // Business Logic
     if (search.getCurrentPage() == 0) {
       search.setCurrentPage(1);
     }
