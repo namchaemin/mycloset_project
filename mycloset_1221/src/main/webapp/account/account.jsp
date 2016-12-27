@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
@@ -12,7 +12,7 @@
 <!-- CSS -->
 <link rel="stylesheet" href="../account/css/reset.css">
 <link rel="stylesheet"
-	href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    href="../node_modules/bootstrap/dist/css/bootstrap.css">
 <link rel="stylesheet" href="../account/css/fonts.css">
 <link rel="stylesheet" href="../account/css/account.css">
 
@@ -22,130 +22,134 @@
 
 <body>
 
-	<form name="updatUserForm" id="updatUserForm"
-		enctype="multipart/form-data">
-		<div id="accountWrap" class="container">
-			<div class="row">
-				<div id="acnt-profile" class="form-group text-center">
-					<c:if test="${!empty user.phot_path}">
-						<img src="../header/upload/${user.phot_path}" class=" img-circle"
-							id="acnt-user-img" alt="Responsive image">
-						<label for="acnt-input-file">프로필 사진 변경</label>
-						<input type="file" id="acnt-input-file" name="testFile"
-							onchange="readURL(this);">
-					</c:if>
-					<c:if test="${!empty faceUser.phot_path}">
-						<img src="${faceUser.phot_path}" class=" img-circle"
-							id="acnt-user-img" alt="Responsive image">
-						<p>페이스북 로그인 사용자</p>
-						<input type="hidden" id="acnt-input-file" name="testFile" >
-					</c:if>
-				</div>
-			</div>
-			<!-- //row 1 -->
+    <form name="updatUserForm" id="updatUserForm"
+        enctype="multipart/form-data">
+        <div id="accountWrap" class="container">
+            <div class="row">
+                <div id="acnt-profile" class="form-group text-center">
+                    <c:if test="${!empty user.phot_path}">
+                        <img src="../header/upload/${user.phot_path}" class=" img-circle"
+                            id="acnt-user-img" alt="Responsive image">
+                        <label for="acnt-input-file">프로필 사진 변경</label>
+                        <input type="file" id="acnt-input-file" name="testFile"
+                            onchange="readURL(this);">
+                    </c:if>
+                    <c:if test="${!empty faceUser.phot_path}">
+                        <img src="${faceUser.phot_path}" class=" img-circle"
+                            id="acnt-user-img" alt="Responsive image">
+                        <p>페이스북 로그인 사용자</p>
+                        <input type="hidden" id="acnt-input-file" name="testFile" >
+                    </c:if>
 
-			<div class="row ">
-				<div class="form-group">
-					<h3 class="text-center acnt-title">MY ACCOUNT</h3>
-				</div>
-			</div>
-			<!-- //row 2 -->
-			<c:if test="${!empty user }">
-				<div id="acnt-info-box" class="row">
-					<div id="acnt-info" class="form-group ">
-						<label for="exampleInputEmail1"> Email </label> <input
-							type="email" class="form-control" id="inputEmail" name="email"
-							value="${user.email}">
-					</div>
-					<div id="acnt-nick" class="form-group">
-						<label for="exampleInputName2">Name</label> <input type="text"
-							class="form-control" id="inputName" name="nick"
-							value="${user.nick}">
-					</div>
-					<div id="acnt-pwd" class="form-group">
-						<label for="InputPassword1">Password</label> <input
-							type="password" class="form-control" id="inputPwd" name="pwd"
-							value="${user.pwd}" placeholder="Password">
-					</div>
-					<div id="acnt-con-pwd" class="form-group">
-						<label for="InputPassword1">Confirm-Password</label> <input
-							type="password" class="form-control" id="inputConPwd"
-							placeholder="Confirm-Password">
-					</div>
-				</div>
-				<!-- //row 3 -->
-				<input type="submit" id="acnt-btn" class="btn btn-default btn-sm"
-					value="Submit">
-			</c:if>
+                </div>
+            </div>
+            <!-- //row 1 -->
 
-			<c:if test="${!empty faceUser}">
-				<div id="acnt-info-box" class="row">
-					<div id="acnt-info" class="form-group ">
-						<input type="hidden" class="form-control" id="inputEmail"
-							name="email" value="${faceUser.email}">
-					</div>
-					<div id="acnt-nick" class="form-group">
-						<label for="exampleInputName2">Name</label> <input type="text"
-							class="form-control" id="inputName" name="nick"
-							value="${faceUser.nick}">
-					</div>
-					<div id="acnt-pwd" class="form-group">
-						<input type="hidden" class="form-control" id="inputPwd" name="pwd"
-							value="${faceUser.pwd}" placeholder="Password">
-					</div>
-					<div id="acnt-con-pwd" class="form-group">
-						<input type="hidden" class="form-control" id="inputConPwd"
-							placeholder="Confirm-Password">
-					</div>
-				</div>
-				<!-- //row 3 -->
-				<input type="submit" id="acnt-btn" class="btn btn-default btn-sm"
-					value="Submit">
-			</c:if>
+            <div class="row ">
+                <div class="form-group">
+                    <h3 class="text-center acnt-title">MY ACCOUNT</h3>
+                </div>
+            </div>
+            <!-- //row 2 -->
+            <c:if test="${!empty user }">
+                <div id="acnt-info-box" class="row">
+                    <input type="hidden" name="user_no" id="user_no"
+                            value="${user.user_no}">
+                    <div id="acnt-info" class="form-group ">
+                        <label for="exampleInputEmail1"> Email </label> <input
+                            type="email" class="form-control" id="inputEmail" name="email"
+                            value="${user.email}">
+                    </div>
+                    <div id="acnt-nick" class="form-group">
+                        <label for="exampleInputName2">Name</label> <input type="text"
+                            class="form-control" id="inputName" name="nick"
+                            value="${user.nick}">
+                    </div>
+                    <div id="acnt-pwd" class="form-group">
+                        <label for="InputPassword1">Password</label> <input
+                            type="password" class="form-control" id="inputPwd" name="pwd"
+                            value="${user.pwd}" placeholder="Password">
+                    </div>
+                    <div id="acnt-con-pwd" class="form-group">
+                        <label for="InputPassword1">Confirm-Password</label> <input
+                            type="password" class="form-control" id="inputConPwd"
+                            placeholder="Confirm-Password">
+                    </div>
+                </div>
+                <!-- //row 3 -->
+                <input type="submit" id="acnt-btn" class="btn btn-default btn-sm"
+                    value="Submit">
+            </c:if>
+
+            <c:if test="${!empty faceUser}">
+                <div id="acnt-info-box" class="row">
+                     <input type="hidden" name="user_no" id="user_no"
+                            value="${user.user_no}">
+                    <div id="acnt-info" class="form-group ">
+                        <input type="hidden" class="form-control" id="inputEmail"
+                            name="email" value="${faceUser.email}">
+                    </div>
+                    <div id="acnt-nick" class="form-group">
+                        <label for="exampleInputName2">Name</label> <input type="text"
+                            class="form-control" id="inputName" name="nick"
+                            value="${faceUser.nick}">
+                    </div>
+                    <div id="acnt-pwd" class="form-group">
+                        <input type="hidden" class="form-control" id="inputPwd" name="pwd"
+                            value="${faceUser.pwd}" placeholder="Password">
+                    </div>
+                    <div id="acnt-con-pwd" class="form-group">
+                            placeholder="Confirm-Password">
+                    </div>
+                </div>
+                <!-- //row 3 -->
+                <input type="submit" id="acnt-btn" class="btn btn-default btn-sm"
+                    value="Submit">
+            </c:if>
+        </div>
+        <!-- //accountWrap -->
+    </form>
+
+    <!--JS-->
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../account/js/account.js"></script>
+    <script src="../node_modules/jquery-form/jquery.form.js"></script>
 
 
-		</div>
-		<!-- //accountWrap -->
-	</form>
+    <script type="text/javascript">
 
-	<!--JS-->
-	<script src="../node_modules/jquery/dist/jquery.js"></script>
-	<script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-	<script src="../account/js/account.js"></script>
-	<script src="../node_modules/jquery-form/jquery.form.js"></script>
+        $("#acnt-btn").click(function() {
+            var form = $('form')[0];
+            var formData = new FormData(form);
+            var user_no = $("#user_no").val();
+            var pwdsize = $("#inputPwd").val();
+            var nick = $("#inputName").val();
+            var email = $("#inputEmail").val();
+            
+            alert("[DEBUG] user_no :"+user_no+"     pwdsize : "+pwdsize+"       nick : "+nick+"     email : "+email);
+        
+            if (pwdsize.length > 2) {
+                $.ajax({
+                    url : "/user/updateUser",
+                    processData : false,
+                    contentType : false,
+                    data : formData,
+                    type : 'POST',
+                    success : function(user) {
+                        location.reload();
+                    }
+                });
+            } else {
+                $.post("/user/faceupdateUser", {
+                    "email" : email,
+                    "nick" : nick
+                }, function checkUser(user) {
+                    location.reload();
+                });
+            }
 
-
-	<script type="text/javascript">
-		$("#acnt-btn").click(function() {
-			var form = $('form')[0];
-			var formData = new FormData(form);
-			var pwdsize = $("#inputPwd").val();
-			var nick = $("#inputName").val();
-			var email = $("#inputEmail").val();
-			
-			alret("pwdsize : "+pwdsize+"<br/>nick : "+nick+"<br/>email : "+email);
-			
-			if (pwdsize.length > 2) {
-				$.ajax({
-					url : '/user/updateUser',
-					processData : false,
-					contentType : false,
-					data : formData,
-					type : 'POST',
-					success : function(user) {
-						location.reload();
-					}
-				});
-			} else {
-				$.post("/user/faceupdateUser", {
-					"email" : email,
-					"nick" : nick
-				}, function checkUser(user) {
-					location.reload();
-				});
-			}
-
-		});
-	</script>
+        });
+    </script>
 </body>
 </html>

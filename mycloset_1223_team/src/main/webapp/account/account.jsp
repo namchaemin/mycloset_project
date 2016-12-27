@@ -41,9 +41,6 @@
 						<input type="hidden" id="acnt-input-file" name="testFile" >
 					</c:if>
 
-
-
-
 				</div>
 			</div>
 			<!-- //row 1 -->
@@ -98,7 +95,6 @@
 							value="${faceUser.pwd}" placeholder="Password">
 					</div>
 					<div id="acnt-con-pwd" class="form-group">
-						<input type="hidden" class="form-control" id="inputConPwd"
 							placeholder="Confirm-Password">
 					</div>
 				</div>
@@ -106,8 +102,6 @@
 				<input type="submit" id="acnt-btn" class="btn btn-default btn-sm"
 					value="Submit">
 			</c:if>
-
-
 		</div>
 		<!-- //accountWrap -->
 	</form>
@@ -120,6 +114,7 @@
 
 
 	<script type="text/javascript">
+
 		$("#acnt-btn").click(function() {
 			var form = $('form')[0];
 			var formData = new FormData(form);

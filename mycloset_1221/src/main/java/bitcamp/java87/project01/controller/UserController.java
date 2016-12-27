@@ -36,7 +36,7 @@ public class UserController {
   private UserService userService;
 
   public UserController() {
-    System.out.println(this.getClass());
+    System.out.println("[UserController Default Constructor]"+this.getClass());
   }
 
   @Value("#{commonProperties['pageUnit']}")
@@ -119,10 +119,12 @@ public class UserController {
       user.setPhot_path(file.getOriginalFilename());
     }
 
+    user.setUser_no(Integer.parseInt(req.getParameter("user_no")));
     user.setEmail(req.getParameter("email"));
     user.setPwd(req.getParameter("pwd"));
     user.setNick(req.getParameter("nick"));
 
+    System.out.println("[userController] updateUser ::: session&updateUser");
     session.setAttribute("user", user);
     userService.updateUser(user);
 

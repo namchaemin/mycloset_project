@@ -56,7 +56,7 @@
 		<h4 class="wdr-logout-msg"> 로그아웃할까요? </h4>
 		<div class="wdr-logout-btn-group">
 			<button class="logout-btn wdr-logout-reset" data-btn-id="0">
-				<span onclick="back();">취소</span>
+				<span>취소</span>
 			</button>
 			<button class="logout-btn wdr-logout-submit" data-btn-id="1">
 				<span  onclick="logout();">확인</span>
@@ -70,10 +70,7 @@
     function logout() {
       location.href = "/index.jsp";
     };
-    
-    $(".wdr-logout-reset").on("click", function() {
-    	
-    });
+
     </script>
 
 

@@ -5,19 +5,6 @@
 		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="UserMapper">
- 	
-	<!-- <resultMap id="user_infoelectMap" type="user">
-		<result property="userId" 			column="user_id" 			jdbcType="VARCHAR"/>
-		<result property="userName"	column="user_name" 		jdbcType="VARCHAR" />
-		<result property="password" 	column="password" 		jdbcType="VARCHAR" />
-		<result property="role" 				column="role" 					jdbcType="VARCHAR" />
-		<result property="ssn" 				column="ssn" 					jdbcType="VARCHAR" />
-		<result property="phone" 			column="cell_phone" 		jdbcType="VARCHAR" />
-		<result property="addr" 				column="addr" 					jdbcType="VARCHAR" />
-		<result property="email" 			column="email" 				jdbcType="NUMERIC"  />
-		<result property="regDate" 		column="reg_date" 			jdbcType="DATE" />
-		</resultMap> -->
-		
 		<resultMap type="user" id="userSelectMap">
 		<result property="user_no" column="user_no" jdbcType="NUMERIC" />
 		<result property="email" column="email" jdbcType="VARCHAR" />
@@ -27,12 +14,6 @@
 		</resultMap>
 	
 	<!-- SQL : INSERT -->
-	<!-- <insert 	id="addUser"		parameterType="user" >
-	 	INSERT
-		INTO user_info( user_id , user_name , password , role , ssn, cell_phone, addr, email , reg_date) 
-		VALUES	 (	#{userId} , #{userName} , #{password} , 'user' , #{ssn:VARCHAR} , 
-							#{phone:VARCHAR} , #{addr:VARCHAR} , #{email:VARCHAR} , SYSDATE )
-	 </insert> -->
 	 <insert   id="addUser"        parameterType="user" >
         INSERT
         INTO user_info( user_no , email , nick , pwd , phot_path) 
@@ -60,6 +41,7 @@
 	 <update	id="updateUser"	parameterType="user" >
 	   	UPDATE user_info
 	   	<set>
+	   	    user_no = #{user_no}
 	   		email	= #{email},
 	   		nick	= #{nick:VARCHAR}, 
 	   		phot_path=#{phot_path:VARCHAR}
@@ -121,7 +103,7 @@
 						 		user_name like '${searchKeyword}%&apos;
 								</if>
 							</where>
-						</if> ) countTable						
+						</if> ) countTable	
 	 </select>
 	 
 </mapper>

@@ -34,7 +34,7 @@ public class WardrobeController {
 
   /// Constructor
   public WardrobeController() {
-    System.out.println(this.getClass());
+    System.out.println("[WardrobeController Default Constructor]"+this.getClass());
   }
 
 
