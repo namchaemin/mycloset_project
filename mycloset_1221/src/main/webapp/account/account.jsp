@@ -120,6 +120,7 @@
     <script type="text/javascript">
 
         $("#acnt-btn").click(function() {
+        	
             var form = $('form')[0];
             var formData = new FormData(form);
             var user_no = $("#user_no").val();
@@ -135,21 +136,21 @@
                     processData : false,
                     contentType : false,
                     data : formData,
-                    type : 'POST',
+                    type : "POST",
                     success : function(user) {
                         location.reload();
                     }
                 });
             } else {
-                $.post("/user/faceupdateUser", {
+            	$.post("/user/faceupdateUser", {
                     "email" : email,
                     "nick" : nick
                 }, function checkUser(user) {
                     location.reload();
                 });
             }
-
         });
+        
     </script>
 </body>
 </html>

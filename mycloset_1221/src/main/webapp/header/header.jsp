@@ -98,10 +98,10 @@
 
 					<!-- gnb03 my account modify-->
 					<li>
-					   <a href="/wardrobe/getWardrobeList?user_no=${user.user_no}" 
-					        class="" draggable="false">
+   					    <c:if test="${!empty user }">
+					      <a href="/wardrobe/getWardrobeList?user_no=${user.user_no}" 
+					            class="" draggable="false">
                             <!-- 일반 유저 로그인 -->
-	    					<c:if test="${!empty user }">
 							    <!-- 프로필 사진이 null일 때 -->
 							    <c:if test="${empty user.phot_path}">
 									<img class="hd-my-img" alt=""
@@ -115,25 +115,28 @@
 		                         </c:if>
 		                         <span class="hd-my-nick"> ${user.nick} </span>
 		                         <!-- <span class="hd-my-email"> ${user.email} </span>  -->
-	                       </c:if>
+                            </a>
+                       </c:if>
 	                       
-	                      <!-- facebook으로 로그인 시 -->
-	                       <c:if test="${!empty  faceUser}">
+                      <!-- facebook으로 로그인 시 -->
+                       <c:if test="${!empty  faceUser}">
+					       <a href="/wardrobe/getWardrobeList?user_no=${faceUser.user_no}" 
+					            class="" draggable="false">
 		                         <!-- facebook 프로필 사진이 null일 때 -->
 		                         <c:if test="${empty   faceUser.phot_path}">
 		                               <img class="hd-my-img" alt="" src="../header/upload/images.png"
 		                                   draggable="false" data-pin-nopin="true">
 		                         </c:if>
 		                         <!-- facebook 프로필 사진이 업로드되어 있을 때 -->
-		                         <c:if test="${!empty user.phot_path}">
+		                         <c:if test="${!empty faceUser.phot_path}">
 			                         <img class="hd-my-img" alt=""
-			                                     src="../header/upload/${user.phot_path}" draggable="false"
+			                                     src="${faceUser.phot_path}" draggable="false"
 			                                     data-pin-nopin="true">
 		                         </c:if>
 		                         <span class="hd-my-nick"> ${ faceUser.nick} </span> 
 		                        <!--  <span class="hd-my-email"> ${ faceUser.email} </span> -->
-						   </c:if>
-					   </a>
+					       </a>
+    				   </c:if>
 					</li>
 				</ul>
 				<!--//hd-gnb-->

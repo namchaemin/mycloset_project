@@ -43,7 +43,7 @@
 	   	<set>
 	   	    user_no = #{user_no}
 	   		email	= #{email},
-	   		nick	= #{nick:VARCHAR}, 
+	   		nick	= #{nick:VARCHAR},
 	   		phot_path=#{phot_path:VARCHAR}
 	 	</set>
 	   	WHERE email = #{email}

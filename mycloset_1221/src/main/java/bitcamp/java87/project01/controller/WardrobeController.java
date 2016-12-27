@@ -38,7 +38,7 @@ public class WardrobeController {
   }
 
 
-  // 옷장 추가시 이름 유효성 체크
+   // 옷장 추가시 이름 유효성 체크
   @RequestMapping(value = "wardrobeValidate")
   public @ResponseBody Wardrobe wardrobeValidate(int user_no, String cls_name) throws Exception {
 
@@ -102,15 +102,15 @@ public class WardrobeController {
     System.out.println("[wardrobeController] ::: updateWardrobe ");
     System.out.println("[wardrobeController] ::: updateWardrobe ::: parameter:cls_no : "+cls_no);
     System.out.println("[wardrobeController] ::: updateWardrobe ::: parameter:cls_name : "+cls_name);
-    
+
     // Business Logic
     Wardrobe wardrobe = wardrobeService.getWardrobe(cls_no);
     wardrobe.setCls_name(cls_name.trim());
     System.out.println("[wardrobeController] ::: updateWardrobe ::: domain ::: before : "+wardrobe);
-    
+
     wardrobeService.updateWardrobe(wardrobe);
     System.out.println("[wardrobeController] ::: updateWardrobe ::: domain ::: after : "+wardrobe);
-    
+
     return wardrobe;
   }
   
@@ -129,6 +129,5 @@ public class WardrobeController {
     
     return wardrobe;
   }
-  
 
 }

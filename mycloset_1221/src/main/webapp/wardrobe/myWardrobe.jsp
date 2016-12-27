@@ -41,8 +41,14 @@
 					</div>
 
 					<div class="modal-body">
+					<c:if test="${!empty user}">
 						<input type="hidden" name="user_no" id="user_no"
 							value="${user.user_no}">
+					</c:if>
+					<c:if test="${!empty faceUser}">
+						<input type="hidden" name="user_no" id="user_no"
+							value="${faceUser.user_no}">
+					</c:if>
 						 <input type="text" name="cls_name" id="addWdr-input" class="form-control"
 							placeholder="옷장 이름을 입력해주세요.">
 							<p class="wdrNameValidate"></p>
@@ -79,8 +85,14 @@
 					</div>
 
 					<div class="modal-body">
-						<input type="hidden" name="user_no" id="user_no"
-							value="${user.user_no}">
+                    <c:if test="${!empty user}">
+                        <input type="hidden" name="user_no" id="user_no"
+                            value="${user.user_no}">
+                    </c:if>
+                    <c:if test="${!empty faceUser}">
+                        <input type="hidden" name="user_no" id="user_no"
+                            value="${faceUser.user_no}">
+                    </c:if>
 						 <input type="text" name="cls_name" id="updateWdr-input" class="form-control"
 							placeholder="옷장 이름을 입력해주세요.">
 							<p class="wdrUpdateValidate"></p>
@@ -116,8 +128,14 @@
 					</div>
 
 					<div class="modal-body">
-						<input type="hidden" name="user_no" id="user_no"
-							value="${user.user_no}">
+                    <c:if test="${!empty user}">
+                        <input type="hidden" name="user_no" id="user_no"
+                            value="${user.user_no}">
+                    </c:if>
+                    <c:if test="${!empty faceUser}">
+                        <input type="hidden" name="user_no" id="user_no"
+                            value="${faceUser.user_no}">
+                    </c:if>
 							<p class="wdrDeleteMsg"> 삭제한 후에는 이 작업을 실행 취소할 수 없습니다! </p>
 					</div>
 
@@ -267,7 +285,6 @@
 	<script src="../node_modules/jquery/dist/jquery.js"></script>
 	<script src="../wardrobe/js/jquery.colorbox-min.js"></script>
 	<script src="../wardrobe/js/wardrobe.js"></script>
-
 
 </body>
 </html>
