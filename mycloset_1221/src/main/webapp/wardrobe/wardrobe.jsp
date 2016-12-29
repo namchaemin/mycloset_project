@@ -30,8 +30,8 @@
         <div id="wdr-user-row" class="row">
             <div id="wdr-user-col" class="col-xs-12 col-md-4">
                 <div id="wdr-user">
-                    <c:if test="${!empty user.phot_path}">
-                        <img src="../header/upload/${user.phot_path}" 
+                    <c:if test="${!empty cls_user.phot_path}">
+                        <img src="../header/upload/${cls_user.phot_path}" 
                                    alt="Responsive image">
                     </c:if>
                     <c:if test="${!empty faceUser.phot_path}">
