@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<html>
 
+<html>
 <head>
 
 <!-- CSS -->
@@ -20,7 +20,7 @@
 		<header id="header">
 			<!-- logo -->
 			<h1 class="hd-logo">
-				<a id="hd-logo-link" href="../index.jsp">
+				<a id="hd-logo-link" href="../main/main.jsp">
 				    <img id="hd-logo-svg" src="../header/css/images/logo_pk.svg" alt="logo">
 				</a>
 			</h1>
