@@ -81,8 +81,16 @@ public class WardrobeController {
 
     System.out.println("[wardrobeController] ::: getWardrobeList ::: GET ");
     System.out.println("[wardrobeController] ::: getWardrobeList ::: parameter:user_no::: " + user_no);
+    
+    int sessionNo = 0;
+    int fbSessionNo= 0;
 
-    int sessionNo = ((User)session.getAttribute("user")).getUser_no();
+    if (session.getAttribute("user") != null) {
+        sessionNo = ((User  )session.getAttribute("user")).getUser_no(); 
+    } else if (session.getAttribute("faceUser") != null) {
+        fbSessionNo = ((User)session.getAttribute("faceUser")).getUser_no();
+    }
+    
     // Business Logic
     User user = userService.getUser(user_no);
     System.out.println("[wardrobeController] ::: getWardrobeList ::: domain:user ::: " + user);
@@ -91,8 +99,8 @@ public class WardrobeController {
 
     model.addAttribute("cls_user", user);
     model.addAttribute("list", map.get("list"));
-    
-    if(user_no == sessionNo){
+
+    if( user_no == sessionNo || user_no == fbSessionNo ){
       return "forward:/wardrobe/myWardrobe.jsp";
     } else {
       return "forward:/wardrobe/wardrobe.jsp";

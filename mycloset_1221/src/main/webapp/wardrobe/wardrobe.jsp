@@ -96,12 +96,6 @@
 							<span class="wdr-cls-name">${wardrobe.cls_name}</span>
 						</a>
 						<p class="wdr-post-cnt">0 POSTS</p>
-						<div class="wdr-btn-group">
-							<button data-toggle="modal" data-target="#updateWdrModal" 
-							               class="wdr-modify btn btn-default btn-sm" type="submit"> 수정 </button>
-							<button  data-toggle="modal" data-target="#deleteWdrModal" 
-							                type="button" class="wdr-delete btn btn-danger btn-sm"> 삭제 </button>
-						</div>
 					</div>
 				</div>
 			</c:forEach>
