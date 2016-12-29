@@ -30,8 +30,12 @@
         <div id="wdr-user-row" class="row">
             <div id="wdr-user-col" class="col-xs-12 col-md-4">
                 <div id="wdr-user">
-                    <c:if test="${!empty cls_user.phot_path}">
-                        <img src="../header/upload/${cls_user.phot_path}" 
+                    <c:if test="${!empty user.phot_path}">
+                        <img src="../header/upload/${user.phot_path}" 
+                                   alt="Responsive image">
+                    </c:if>
+                    <c:if test="${!empty faceUser.phot_path}">
+                        <img src="${faceUser.phot_path}" 
                                    alt="Responsive image">
                     </c:if>
                 </div>
@@ -40,14 +44,9 @@
 
             <!-- User Profile Info -->
             <div class="wdr-userInfo col-xs-12 col-sm-5 col-md-7">
-                <input type="hidden" name="cls_user_no" id="cls_user_no" value="${cls_user.user_no}">
                 <h4 class="wdr-userId">${cls_user.nick}</h4>
-                
-                <input type="hidden" name="user_no" id="user_no" value="${user.user_no}">
-                <a id="wdr-user-follow" class="btn btn-default btn-sm" 
-                     href="#" role="button"> 팔로우 </a> 
-                <a id="wdr-user-unfollow" class="btn btn-primary btn-sm" 
-                     href="#" role="button"> 언팔로우 </a>
+<!--                <a id="wdr-user-modify" 
+                    class="btn btn-default btn-sm" href="#" role="button">프로필수정</a> -->
                 
                 <ul class="wdr-follow">
                     <li class="wdr-wdrs">
@@ -96,6 +95,12 @@
 							<span class="wdr-cls-name">${wardrobe.cls_name}</span>
 						</a>
 						<p class="wdr-post-cnt">0 POSTS</p>
+						<div class="wdr-btn-group">
+							<button data-toggle="modal" data-target="#updateWdrModal" 
+							               class="wdr-modify btn btn-default btn-sm" type="submit"> 수정 </button>
+							<button  data-toggle="modal" data-target="#deleteWdrModal" 
+							                type="button" class="wdr-delete btn btn-danger btn-sm"> 삭제 </button>
+						</div>
 					</div>
 				</div>
 			</c:forEach>

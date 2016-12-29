@@ -11,8 +11,6 @@ $(function() {
 	fncUpdateWardrobe();
 	fncDeleteWardrobe();
 	
-	wdrFollowBtn();
-	
 });
 
 /* 옷장명 공백, 중복체크 function */
@@ -259,20 +257,7 @@ function fncDeleteWardrobe() {
 
 	});
 	
-	function wdrFollowBtn() {
-		
-		$("#wdr-user-follow").on("click", function(){
-			$(this).removeClass("on").css("display","none");
-			$("#wdr-user-unfollow").addClass("on").css("display","block");
-		});
-		
-		$("#wdr-user-unfollow").on("click", function(){
-			$(this).removeClass("on").css("display","none");
-			$("#wdr-user-follow").addClass("on").css("display","block");
-		});
-		
-	}
-	
+	/*$(".wdr-delete").colorbox({href:"../wardrobe/deleteWardrobe.jsp", scrolling:"false"});*/
 	
 }
 
