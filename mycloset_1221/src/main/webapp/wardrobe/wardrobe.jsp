@@ -34,10 +34,6 @@
                         <img src="../header/upload/${cls_user.phot_path}" 
                                    alt="Responsive image">
                     </c:if>
-                    <c:if test="${!empty faceUser.phot_path}">
-                        <img src="${faceUser.phot_path}" 
-                                   alt="Responsive image">
-                    </c:if>
                 </div>
             </div>
             <!--//wardrobeUser -->
