@@ -159,15 +159,17 @@
 		<!-- Wardrobe Header -->
 		<!-- User Profile Picture -->
 		<div id="wdr-user-row" class="row">
-			<div id="wdr-user" class="col-xs-12 col-md-4">
-                <c:if test="${!empty user.phot_path}">
-                    <img src="../header/upload/${user.phot_path}" class=" img-circle"
-                               alt="Responsive image">
-                </c:if>
-                <c:if test="${!empty faceUser.phot_path}">
-                    <img src="${faceUser.phot_path}" class=" img-circle"
-                               alt="Responsive image">
-                </c:if>
+	       	<div id="wdr-user-col" class="col-xs-12 col-md-4">
+				<div id="wdr-user">
+	                <c:if test="${!empty user.phot_path}">
+	                    <img src="../header/upload/${user.phot_path}" 
+	                               alt="Responsive image">
+	                </c:if>
+	                <c:if test="${!empty faceUser.phot_path}">
+	                    <img src="${faceUser.phot_path}" 
+	                               alt="Responsive image">
+	                </c:if>
+				</div>
 			</div>
 			<!--//wardrobeUser -->
 
@@ -262,7 +264,7 @@
 
 			<!-- Default Wardrobe -->
 			<div class="wdr-content col-xs-12 col-sm-6  col-md-4"
-				id="wdr-list-box">
+				    id="wdr-list-box">
 				<div class="wdr-grid">
 					<div class="row" id="wdr-thumb-wrap">
 						<div class="wdr-thumb col-xs-4 col-md-4"></div>
@@ -277,7 +279,6 @@
 				</div>
 			</div>
 		</div>
-		<!-- javaScript 로 수정해야 할 영역 append element -->
 	</div>
 	<!-- //wardrobeContainer -->
 

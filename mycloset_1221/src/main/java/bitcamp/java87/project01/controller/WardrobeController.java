@@ -77,11 +77,12 @@ public class WardrobeController {
 
   // 옷장 목록 조회
   @RequestMapping(value = "getWardrobeList", method = RequestMethod.GET)
-  public String listWardrobe(@RequestParam int user_no, Model model) throws Exception {
+  public String listWardrobe(@RequestParam int user_no, Model model, HttpSession session) throws Exception {
 
-    System.out.println("[wardrobeController] ::: getWardrobeList ::: POST ");
+    System.out.println("[wardrobeController] ::: getWardrobeList ::: GET ");
     System.out.println("[wardrobeController] ::: getWardrobeList ::: parameter:user_no::: " + user_no);
 
+    int sessionNo = ((User)session.getAttribute("user")).getUser_no();
     // Business Logic
     User user = userService.getUser(user_no);
     System.out.println("[wardrobeController] ::: getWardrobeList ::: domain:user ::: " + user);
@@ -90,8 +91,12 @@ public class WardrobeController {
 
     model.addAttribute("cls_user", user);
     model.addAttribute("list", map.get("list"));
-
-    return "forward:/wardrobe/myWardrobe.jsp";
+    
+    if(user_no == sessionNo){
+      return "forward:/wardrobe/myWardrobe.jsp";
+    } else {
+      return "forward:/wardrobe/wardrobe.jsp";
+    }
   }
   
   

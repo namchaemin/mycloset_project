@@ -63,7 +63,8 @@ public class UserController {
     // Business Logic
     user.setPhot_path("images.png");
     userService.addUser(user);
-
+    user = userService.getUser(user.getEmail());
+    
     if (user != null) {
       session.setAttribute("user", user);
     }

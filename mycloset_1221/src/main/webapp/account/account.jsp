@@ -83,8 +83,8 @@
 
             <c:if test="${!empty faceUser}">
                 <div id="acnt-info-box" class="row">
-                     <input type="hidden" name="user_no" id="user_no"
-                            value="${user.user_no}">
+                     <input type="hidden" name="faceUser_no" id="faceUser_no"
+                            value="${faceUser.user_no}">
                     <div id="acnt-info" class="form-group ">
                         <input type="hidden" class="form-control" id="inputEmail"
                             name="email" value="${faceUser.email}">

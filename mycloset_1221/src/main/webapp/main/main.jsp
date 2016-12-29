@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 
 <%@ include file="../header/header.jsp" %>
+  <p>===>${user} </p>
 
 <html lang="ko">
 <head>

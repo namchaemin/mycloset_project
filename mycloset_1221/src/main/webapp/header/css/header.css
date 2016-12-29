@@ -47,7 +47,7 @@
 	z-index:1 !important;
     padding-left: 42px !important;
     padding-bottom: 5px !important;
-    width: 100% !important;
+    width: 97% !important;
     height: 35px !important;
     border: none !important;
     border-radius: 10px !important;
@@ -165,6 +165,7 @@ sweep-to-left:before
     margin: 10px !important;
     border-radius: 10px !important;
 }
+
 #hd-gnb li:first-child .hd-gnb-sub li:hover a {
     background: #eee !important;
 }
@@ -285,115 +286,30 @@ sweep-to-left:before
 	padding-right: 10px !important;
 }
 
-img.hd-my-img {
+span.hd-img-box {
 	width: 26px !important;
-	border-radius: 50% !important;
-	margin: 3px !important;
+	height: 26px !important;
+	display: inline-block;
+	overflow: hidden;
+	border-radius: 50%;
+	margin-top: 3px;
+}
+
+img.hd-my-img {
+	width: 100%;
+	margin: auto;
 }
 
 span.hd-my-nick {
 	display: inline-block !important;
-	margin-top: 10px !important;
 	margin-left: 2px !important;
 	font-weight: 500 !important;
 }
 
-/* 
-#hd-gnb li:last-child .hd-gnb-sub {
-    width: 200px !important;
-    text-align: center !important;
-}
-.hd-sub-account-bar {
-    height: 24px !important;
-    line-height: 24px !important;
-    font-size: 12px !important;
-    text-shadow: 1px 1px #fff !important;
-    padding: 0px 10px !important;
-    border-bottom: 1px solid #ddd !important;
-    background: #eee !important;
-}
-
-.hd-sub-account-bar span {
-}
-
-.hd-account-bar-id {
-    float: left !important;
-    font-size: 11px !important;
-    font-weight: 500 !important;
-}
-
-.hd-account-bar-logout {
-    float: right !important;
-    font-size: 11px !important;
-    color: #777 !important;
-}
-
-.hd-sub-account {
-    margin-top: 9px !important; 
-    height: 36px !important;
-}
-.hd-account {
-    display: block !important;
-    width:100% !important;
-    height: 52px !important;
-    border-bottom: 1px solid #eee !important;
-}
-.hd-my-img {
-    float: left !important;
-    margin-left: 10px !important;
-    width: 42px !important;
-    height: 42px !important;
-    border-radius: 50% !important;
-    border: 1px solid #eee !important;
-    overflow: hidden !important;
-}
-.hd-my-nick, .hd-my-email {
-    float: left !important;
-    margin-left: 21px !important;
-}
-.hd-my-nick {
-    font-size: 14px !important;
-    line-height: 25px !important;
-}
-.hd-my-email {
-    color: #bbb !important;
-}
-.hd-sub-account-list {
-    margin-top: 30px !important;
-    text-align: center !important;
-}
-.hd-sub-account-list ul li {
-    margin: 2px 5px 2px 5px !important;
-    font-size: 12px !important;
-    line-height: 30px !important;
-    border-radius: 10px !important;
-}
-.hd-sub-account-list ul li:first-child {
-}
-.hd-sub-account-list ul li:hover {
-    background: #eee !important;
-}
-.hd-sub-account-list {
-    margin-bottom: 12px !important;
-}
-.hd-account-list-wdr  {
-    margin-top: 10px !important;
-}
-.hd-account-list-info {
-}
- */
-
 /* Sub Menu Position control */
-#hd-gnb li:first-child ul.hd-gnb-sub {
-    right: 130px !important;
-}
 
 #hd-gnb li:nth-child(2) ul.hd-gnb-sub {
     right: 40px !important;
-}
-
-#hd-gnb li:last-child ul.hd-gnb-sub {
-    right: 30px !important;
 }
 /* ========================================= */
 

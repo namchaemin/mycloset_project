@@ -46,14 +46,18 @@ a:focus {
 
 /* User Profile Picture */
 #wdr-user {
+	margin: auto;
+	border-radius: 50%;
+	width: 140px;
+	height: 140px;
 	text-align: center;
 	overflow: hidden;
+	padding: 0px;
 }
 
 #wdr-user img {
-	width: 140px;
+	width: 100%;
 	margin: auto;
-	margin-top: 10px;
 }
 
 /* User Profile Info*/
@@ -130,7 +134,7 @@ a:focus {
 }
 
 .wdr-btn>ul {
-	margin-top: 20px;
+	margin-top: 10px;
 }
 
 .wdr-btn>ul>li {

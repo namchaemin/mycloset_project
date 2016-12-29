@@ -26,47 +26,54 @@
 <body>
 	<div id="wdr-container">
 		<!-- Wardrobe Header -->
-		<!-- User Profile Picture -->
-		<div id="wdr-user-row" class="row">
-			<div id="wdr-user" class="col-xs-12 col-md-4">
-				<img class="wdr-userImg img-circle"
-					src="../wardrobe/css/images/user01.png" alt="" />
-			</div>
-			<!--//wardrobeUser -->
+        <!-- User Profile Picture -->
+        <div id="wdr-user-row" class="row">
+            <div id="wdr-user-col" class="col-xs-12 col-md-4">
+                <div id="wdr-user">
+                    <c:if test="${!empty user.phot_path}">
+                        <img src="../header/upload/${user.phot_path}" 
+                                   alt="Responsive image">
+                    </c:if>
+                    <c:if test="${!empty faceUser.phot_path}">
+                        <img src="${faceUser.phot_path}" 
+                                   alt="Responsive image">
+                    </c:if>
+                </div>
+            </div>
+            <!--//wardrobeUser -->
 
-			<!-- User Profile Info -->
-			<div class="wdr-userInfo col-xs-12 col-sm-5 col-md-7">
-				<h4 class="wdr-userId">${cls_user.nick}</h4>
-				<a id="wdr-user-follow" 
-				    class="btn btn-default btn-sm" href="#" role="button">팔로우</a>
-				<a id="wdr-user-unfollow"
-					class="btn btn btn-primary btn-sm" href="#" role="button">언팔로우</a>
-
-				<ul class="wdr-follow">
-					<li class="wdr-wdrs">
-						<h5>옷장</h5>
-						<p class="wdr-wdr-cnt"></p>
-					</li>
-					<li class="wdr-follwers">
-						<h5>팔로워</h5>
-						<p class="wdr-follower-cnt">21,321</p>
-					</li>
-					<li class="wdr-followings">
-						<h5>팔로우</h5>
-						<p class="wdr-following-cnt">1,834</p>
-					</li>
-				</ul>
-				
-				<div id="wdr-exp-wrap">
-					<p class="wdr-exp">
-						안녕하세요. 많은 구독 부탁드려요. <br /> 
-						<a href="https://mycloset.link:8080">
-							https://mycloset.link/
-						</a>
-					</p>
-				</div>
-			</div>
-			<!-- // wardrobeUserInfo -->
+            <!-- User Profile Info -->
+            <div class="wdr-userInfo col-xs-12 col-sm-5 col-md-7">
+                <h4 class="wdr-userId">${cls_user.nick}</h4>
+                <a id="wdr-user-follow" class="btn btn-default btn-sm" href="#"
+                    role="button">팔로우</a> <a id="wdr-user-unfollow"
+                    class="btn btn btn-primary btn-sm" href="#" role="button">언팔로우</a>
+                
+                <ul class="wdr-follow">
+                    <li class="wdr-wdrs">
+                        <h5>옷장</h5>
+                        <p class="wdr-wdr-cnt"></p>
+                    </li>
+                    <li class="wdr-follwers">
+                        <h5>팔로워</h5>
+                        <p class="wdr-follower-cnt">21,321</p>
+                    </li>
+                    <li class="wdr-followings">
+                        <h5>팔로우</h5>
+                        <p class="wdr-following-cnt">1,834</p>
+                    </li>
+                </ul>
+                
+                <div id="wdr-exp-wrap">
+                    <p class="wdr-exp">
+                        안녕하세요. 많은 구독 부탁드려요. <br /> 
+                        <a href="https://mycloset.link:8080">
+                            https://mycloset.link/
+                        </a>
+                    </p>
+                </div>
+            </div>
+            <!-- // wardrobeUserInfo -->
 		</div>
 		<!--// Wardrobe Header -->
 
