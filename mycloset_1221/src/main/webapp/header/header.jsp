@@ -38,13 +38,13 @@
 
 				<!-- global navigation bar -->
 				<ul id="hd-gnb">
-				
+
 				    <!-- 업로드 -->
 					<li>
 					   <img class="hd-icon-upload"
 						         src="../header/css/images/icon-upload.svg" alt="upload">
 				    </li>
-				     
+
 				    <!-- 메세지/채팅 -->
 					<li>
 					    <!-- 아이콘 링크 -->
@@ -52,12 +52,12 @@
 	                        <img class="hd-icon-chat" 
 	                               src="../header/css/images/icon-chat.svg" alt="chat">
                         </a>
-                        
+
                         <!-- 메세지 서브메뉴 -->
 						<ul class="hd-gnb-sub hd-msg">
 						    <!-- Message/Chatbot 버튼 -->
 							<div class="hd-msg-tab">
-							
+
 								    <span class="hd-tab-msg"> 
 									    <a href="#"> Message </a>
 									</span>
@@ -72,7 +72,7 @@
 									</span>
 							    </div>
 								<span class="hd-msg-txt"> recent message </span>
-								
+
 							<!-- 최근 메세지 리스트 -->
 							<li class="hd-receive-msg-list01">
 								<div class="hd-msgList firstMsgList">
@@ -83,7 +83,7 @@
 									<span class="userMsg"> 안녕하세요. </span>
 								</div>
 							</li>
-							
+
 							<!-- 페이스북 체크 버튼 -->
 							<li class="hd-receive-msg-list02">
 								<div class="hd-msgList">
@@ -101,7 +101,7 @@
    					    <c:if test="${!empty user }">
 					      <a href="/wardrobe/getWardrobeList?user_no=${user.user_no}" 
 					            class="" draggable="false">
-                            <!-- 일반 유저 로그인 -->
+                                <!-- 일반 유저 로그인 -->
 							    <!-- 프로필 사진이 null일 때 -->
 							    <span class="hd-img-box">
 								    <c:if test="${empty user.phot_path}">
@@ -138,7 +138,7 @@
 			                         </c:if>
 		                         </span>
 		                         <span class="hd-my-nick"> ${ faceUser.nick} </span> 
-		                        <!--  <span class="hd-my-email"> ${ faceUser.email} </span> -->
+		                         <!-- <span class="hd-my-email"> ${ faceUser.email} </span> -->
 					       </a>
     				   </c:if>
 					</li>
@@ -156,12 +156,7 @@
 	<script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 	<script src="../header/js/jquery.colorbox-min.js"></script>
 	<script src="../header/js/header.js"></script>
-	<script src="../front/js/facebooklogout.js"></script>
-	<script type="text/javascript">
-		function logout() {
-			location.href = "/index.jsp";
-		}
-	</script>
+
 </body>
 
 </html>
