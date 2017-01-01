@@ -28,7 +28,7 @@
 			<div class="row">
 				<div id="acnt-profile" class="form-group text-center">
 					<c:if test="${!empty user.phot_path}">
-						<img src="../header/upload/${user.phot_path}" class=" img-circle"
+						<img src="../fileUpload/${user.phot_path}" class=" img-circle"
 							id="acnt-user-img" alt="Responsive image">
 						<label for="acnt-input-file">프로필 사진 변경</label>
 						<input type="file" id="acnt-input-file" name="testFile"

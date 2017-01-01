@@ -141,12 +141,8 @@ public class UserController {
 	session.setAttribute("faceUser", user);
 	System.out.println("여기 유저업데이트 디비후");
 	
-	
 	return user;
 	}
-	
-	
-	
 	
 	
 	@RequestMapping( value="login", method=RequestMethod.GET )

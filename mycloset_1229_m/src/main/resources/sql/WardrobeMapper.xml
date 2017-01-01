@@ -10,6 +10,8 @@
 		<result property="cls_no" column="cls_no" jdbcType="NUMERIC" />
 		<result property="cls_name" column="cls_name" jdbcType="VARCHAR" />
 		<result property="user_no" column="user_no" jdbcType="NUMERIC" />
+		<result property="follower" column="flwer_user" jdbcType="NUMERIC" />
+		<result property="follwing" column="flwing_user" jdbcType="NUMERIC" />
 	</resultMap>
     
 	<!-- SQL : INSERT -->
@@ -58,6 +60,15 @@
 		WHERE cls_no = #{cls_no}
 	</update>
 
+	<!-- SQL : UPDATE -->
+	<update id="updateWardrobe" parameterType="wardrobe">
+		UPDATE myCloset
+		<set>
+			cls_name = #{cls_name}
+		</set>
+		WHERE cls_no = #{cls_no}
+	</update>
+
 	<!-- SQL : DELETE -->
 	<delete id="deleteWardrobe" parameterType="int">
 		DELETE
@@ -65,4 +76,39 @@
         WHERE cls_no = #{value}
 	</delete>
 
+
+    <!-- ////////////////////////////// FOLLOW TABLE ////////////////////////////// -->
+	<!-- SQL : FOLLOW INSERT -->
+    <insert id="addFollow" parameterType="wardrobe">
+        INSERT
+        INTO follow(flwer_user, flwing_user)
+        VALUES (
+        #{follower:NUMERIC},
+        #{following:NUMERIC}
+    </insert>
+
+	<!-- SQL : FOLLOW DELETE -->
+	<delete id="deleteFollw" parameterType="wardrobe">
+		DELETE
+        FROM follow
+        WHERE flwer_user = #{follower} 
+                        AND flwing_user = #{following}
+	</delete>
+	
+	<!-- SQL : SELECT FOLLOWER LIST -->
+    <select id="getFollowerList" parameterType="INTEGER" resultMap="wardrobeSelectMap">
+        SELECT
+        flwer_user
+        FROM follow
+        WHERE flwing_user = #{value}
+    </select>
+	
+	<!-- SQL : SELECT FOLLOWING LIST -->
+    <select id="getFollwingList" parameterType="INTEGER" resultMap="wardrobeSelectMap">
+        SELECT
+        flwing_user
+        FROM follow
+        WHERE flwer_user = #{value}
+    </select>
+	
 </mapper>
