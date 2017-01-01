@@ -12,6 +12,8 @@ $(function() {
 	fncUpdateWardrobe();
 	fncDeleteWardrobe();
 	
+	wdrFollow();
+	
 });
 
 /* 옷장명 공백, 중복체크 function */
@@ -273,17 +275,43 @@ function fncDeleteWardrobe() {
 	});
 }
 
-function wdrFollowBtn() {
+function wdrFollow() {
 	
+	var follower = $("#user_no").val();
+	var following = $("#cls_user_no").val();
+
 	$("#wdr-user-follow").on("click", function() {
-		$(this).removeClass("on").css("display","none");
-		$("#wdr-user-unfollow").addClass("on").css("display","block");
-	});
+		
+		alert("[DEBUG] follow를 누른 유저번호 : "+follower+"	follow가 눌러진 해당 옷장의 유저번호 : "+following);
+		
+		$.ajax({
+			url: "/wardrobe/addFollow",
+			data: {
+				"follower" : follower,
+				"following" : following
+			},
+			success : function(wardrobe) {
+				$("#wdr-user-follow").css("display","none");
+				$("#wdr-user-unfollow").css("display","inline-block");
+			}
+		});//end of ajax
+	});//end of follow click function
 	
 	$("#wdr-user-unfollow").on("click", function() {
-		$(this).removeClass("on").css("display","none");
-		$("#wdr-user-follow").addClass("on").css("display","block");
-	});
+		alert("[DEBUG] unfollow를 누른 유저번호 : "+follower+"	unfollow가 눌러진 해당 옷장의 유저번호 : "+following);
+		
+		$.ajax({
+			url: "/wardrobe/deleteFollow",
+			data: {
+				"follower" : follower,
+				"following" : following
+			},
+			success : function(wardrobe) {
+				$("#wdr-user-unfollow").css("display","none");
+				$("#wdr-user-follow").css("display","inline-block");
+			}
+		});//end of ajax
+	});//end of unfollow click function
 	
 }
 
