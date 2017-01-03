@@ -44,11 +44,14 @@
                 <h4 class="wdr-userId">${cls_user.nick}</h4>
                 
                 <input type="hidden" name="user_no" id="user_no" value="${user.user_no}">
-                <a id="wdr-user-follow" class="btn btn-default btn-sm" 
-                     href="#" role="button"> 팔로우 </a> 
-                <a id="wdr-user-unfollow" class="btn btn-primary btn-sm" 
-                     href="#" role="button"> 언팔로우 </a>
-                
+                <c:if test="${getFollow == 0}">
+	                <a id="wdr-user-follow" class="btn btn-default btn-sm" 
+	                     href="#" role="button"> 팔로우 </a>
+                </c:if>
+                <c:if test="${getFollow != 0}"> 
+	                <a id="wdr-user-unfollow" class="btn btn-primary btn-sm" 
+	                     href="#" role="button"> 언팔로우 </a>
+                </c:if>
                 <ul class="wdr-follow">
                     <li class="wdr-wdrs">
                         <h5>옷장</h5>

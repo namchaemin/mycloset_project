@@ -291,8 +291,7 @@ function fncFollowWardrobe() {
 				"following" : following
 			},
 			success : function(wardrobe) {
-				$("#wdr-user-follow").css("display","none");
-				$("#wdr-user-unfollow").css("display","inline-block");
+				window.location.reload();
 			}
 		});//end of ajax
 	});//end of follow click function
@@ -307,8 +306,7 @@ function fncFollowWardrobe() {
 				"following" : following
 			},
 			success : function(wardrobe) {
-				$("#wdr-user-unfollow").css("display","none");
-				$("#wdr-user-follow").css("display","inline-block");
+				window.location.reload();
 			}
 		});//end of ajax
 	});//end of unfollow click function

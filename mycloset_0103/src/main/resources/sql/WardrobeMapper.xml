@@ -78,30 +78,30 @@
 	
 	
 	
-    <!-- SQL : INSERT // FOLLOW
+    <!-- SQL : INSERT // FOLLOW -->
     <insert id="addFollow" parameterType="wardrobe">
         INSERT
         INTO follow(follower, following)
         VALUES (
         #{follower:NUMERIC},
         #{following:NUMERIC})
-    </insert>-->
+    </insert>
     
-    <!-- SQL : DELETE // UNFOLLOW
+    <!-- SQL : DELETE // UNFOLLOW -->
     <delete id="deleteFollow" parameterType="wardrobe">
         DELETE
         FROM follow
         WHERE follower = #{follower}
                         AND following = #{following}
-    </delete> -->
+    </delete>
     
-    <!-- SQL : SELECT ONE // FOLLOW 여부
-    <select id="getFollow" parameterType="wardrobe" resultMap="int">
+    <!-- SQL : SELECT ONE // FOLLOW 여부 -->
+    <select id="getFollow" parameterType="wardrobe" resultType="int">
         SELECT COUNT(*)
         FROM follow
         WHERE follower = #{follower}
                         AND following = #{following}
-    </select> -->
+    </select>
     
     <!-- SQL : SELECTLIST // FOLLOWER LIST
     <select id="getFollowerList" parameterType="INTEGER" resultMap="wardrobeSelectMap">
@@ -112,14 +112,13 @@
                         AND flw.follower = us.user_no
     </select>    -->
     
-    <!-- SQL : SELECTLIST // FOLLOWING LIST -->
+    <!-- SQL : SELECTLIST // FOLLOWING LIST
     <select id="getFollowingList" parameterType="INTEGER" resultMap="wardrobeSelectMap">
         SELECT
         flw.following, us.email, us.nick, us.phot_path
         FROM follow flw, user_info us
         WHERE flw.follower = #{value}
                         AND flw.following = us.user_no
-    </select>
-
+    </select> -->
 
 </mapper>
