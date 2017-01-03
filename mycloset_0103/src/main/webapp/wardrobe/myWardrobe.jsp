@@ -25,7 +25,8 @@
 
 <body>
 
-	<!-- ============================== Add Wardrobe Modal ============================== -->
+    <!-- 옷장 추가 Modal -->
+    <!-- ---------------------------------------------------------------------------------------------------->
 	<div class="modal fade" id="addWdrModal" tabindex="-1" role="dialog"
 		aria-labelledby="wdrModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
@@ -69,7 +70,8 @@
 	<!-- /.modal -->
 	<!-- ---------------------------------------------------------------------------------------------------->
 
-	<!-- ============================== update Wardrobe Modal ============================== -->
+    <!--  옷장 이름 수정 Modal -->
+    <!-- ---------------------------------------------------------------------------------------------------->	
 	<div class="modal fade" id="updateWdrModal" tabindex="-1" role="dialog"
 		aria-labelledby="wdrModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
@@ -112,7 +114,9 @@
 	<!-- /.modal -->
 	<!-- ---------------------------------------------------------------------------------------------------->
 
-	<!-- ============================== delete Wardrobe Modal ============================== -->
+
+    <!-- 옷장 삭제 Modal -->
+    <!-- ---------------------------------------------------------------------------------------------------->
  	<div class="modal fade bs-example-modal-sm" id="deleteWdrModal" tabindex="-1" role="dialog"
 		aria-labelledby="wdrModalLabel" aria-hidden="true">
 		<div class="modal-dialog modal-sm">
@@ -153,8 +157,99 @@
 	</div>
 	<!-- /.modal -->
 	<!-- ---------------------------------------------------------------------------------------------------->
+	
+	
+	<!-- 팔로워 리스트 Modal -->
+    <!-- ---------------------------------------------------------------------------------------------------->
+    <div class="modal fade" id="followerListModal" tabindex="-1" role="dialog"
+        aria-labelledby="wdrModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <form name="wdr-name">
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"
+                            aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h4 class="modal-title">팔로워</h4>
+                    </div>
+
+                    <div class="modal-body">
+                    <c:if test="${!empty user}">
+                        <input type="hidden" name="user_no" id="user_no"
+                            value="${user.user_no}">
+                    </c:if>
+                    <c:if test="${!empty faceUser}">
+                        <input type="hidden" name="user_no" id="user_no"
+                            value="${faceUser.user_no}">
+                    </c:if>
+                    <ul class="wdr-follower-ul">
+                        <c:forEach var="followers" items="${followerList}">
+                            <li>
+                                <img src="../uploadFile/${wardrobe.follow.phot_path}">
+                            </li>
+                        </c:forEach>
+                    </ul>
+                    </div>
+
+                    <div class="modal-footer">
+                    </div>
+
+                </div>
+                <!-- /.modal-content -->
+            </form>
+            <!-- /.form -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+    <!-- ---------------------------------------------------------------------------------------------------->
+    
+    <!-- 팔로잉 리스트 Modal -->
+    <!-- ---------------------------------------------------------------------------------------------------->
+    <div class="modal fade" id="followingListModal" tabindex="-1" role="dialog"
+        aria-labelledby="wdrModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <form name="wdr-name">
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"
+                            aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h4 class="modal-title">팔로잉</h4>
+                    </div>
+
+                    <div class="modal-body">
+                    <c:if test="${!empty user}">
+                        <input type="hidden" name="user_no" id="user_no"
+                            value="${user.user_no}">
+                    </c:if>
+                    <c:if test="${!empty faceUser}">
+                        <input type="hidden" name="user_no" id="user_no"
+                            value="${faceUser.user_no}">
+                    </c:if>
+                         <input type="text" name="cls_name" id="addWdr-input" class="form-control"
+                            placeholder="옷장 이름을 입력해주세요.">
+                    </div>
+
+                    <div class="modal-footer">
+                    </div>
+
+                </div>
+                <!-- /.modal-content -->
+            </form>
+            <!-- /.form -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+    <!-- ---------------------------------------------------------------------------------------------------->
 
 
+    <!-- 옷장 컨텐츠 시작 -->
 	<div id="wdr-container">
 		<!-- Wardrobe Header -->
 		<!-- User Profile Picture -->
@@ -186,7 +281,7 @@
 					</li>
 					<li class="wdr-follwers">
 						<h5>팔로워</h5>
-						<p class="wdr-follower-cnt">21,321</p>
+						<p class="wdr-follower-cnt"></p>
 					</li>
 					<li class="wdr-followings">
 						<h5>팔로우</h5>

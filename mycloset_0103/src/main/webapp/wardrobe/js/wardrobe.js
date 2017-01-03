@@ -172,6 +172,14 @@ function wdrModal() {
 	$("button.wdr-delete").on("click", function() {
 		$('#deleteWdrModal').modal('show');
 	});
+	
+	
+	$("li.wdr-follwers").on("click", function() {
+		$('#followerListModal').modal('show');
+	});
+	$("li.wdr-follwings").on("click", function() {
+		$('#followingListModal').modal('show');
+	});
 };
 
 
@@ -310,6 +318,43 @@ function fncFollowWardrobe() {
 			}
 		});//end of ajax
 	});//end of unfollow click function
+	
+}
+
+
+function fncFollowerList() {
+	var following = $("#cls_user_no").val();
+	
+	$("li.wdr-follwers").on("click", function() {
+		
+		$.ajax({
+			url: "/wardrobe/getFollowerList",
+			data: {
+				"following" : following
+			},
+			success : function(wardrobe) {
+			}
+		});//end of ajax
+		
+	});
+}
+
+function fncFollowingList() {
+	var follower = $("#cls_user_no").val();
+	
+	$("li.wdr-follwings").on("click", function() {
+		
+		$.ajax({
+			url: "/wardrobe/getFollowingList",
+			data: {
+				"follower" : follower
+			},
+			success : function(wardrobe) {
+			}
+		});//end of ajax
+		
+	});
+	
 	
 }
 

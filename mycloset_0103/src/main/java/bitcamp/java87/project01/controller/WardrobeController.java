@@ -94,8 +94,6 @@ public class WardrobeController {
       sessionNo = ((User) session.getAttribute("faceUser")).getUser_no();
     }
     System.out.println("[wardrobeController] ::: getWardrobeList ::: int sessionNo::: " + sessionNo);
-    
-    
 
     // Business Logic
     User user = userService.getUser(user_no);
@@ -159,7 +157,9 @@ public class WardrobeController {
 
     return wardrobe;
   }
-
+  
+  
+  
   // 옷장 팔로잉 (세션유저(Follower)가 타인 옷장의 팔로우버튼을 눌렀을 때)
   @RequestMapping(value = "addFollow")
   public @ResponseBody Wardrobe addFollow(int follower, int following) throws Exception {
@@ -197,16 +197,37 @@ public class WardrobeController {
     return wardrobe;
   }
 
-/*
+
   //옷장 팔로워 리스트
-  @RequestMapping(value = "getFollow")
-  public @ResponseBody  getFollowerList(int follower, int following) throws Exception {
-  
+  @RequestMapping(value = "getFollowerList")
+  public @ResponseBody String getFollowerList(int following, Model model) throws Exception {
+
+    System.out.println("[wardrobeController] ::: getFollowerList ");
+    System.out.println("[wardrobeController] ::: getFollowerList ::: parameter:following : " + following);
+
+    // Business Logic
+    Map<String, Object> map = wardrobeService.getFollowerList(following);
+    
+    model.addAttribute("followerList", map.get("list"));
+    
     return null;
   }
-  */
-
+  
   //옷장 팔로잉 리스트
+  @RequestMapping(value = "getFollowingList")
+  public @ResponseBody String getFollowingList(int follower, Model model) throws Exception {
+    
+    System.out.println("[wardrobeController] ::: getFollowingList ");
+    System.out.println("[wardrobeController] ::: getFollowingList ::: parameter:following : " + follower);
+    
+    // Business Logic
+    Map<String, Object> map = wardrobeService.getFollowingList(follower);
+    
+    model.addAttribute("followingList", map.get("list"));
+    
+    return null;
+  }
+
 
   @RequestMapping(value = "getJsonWardrobe", method = RequestMethod.GET)
   public ResponseEntity<String> getJsonWardrobe(HttpSession session) throws Exception {

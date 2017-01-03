@@ -96,6 +96,11 @@ a:focus {
 
 .wdr-follwers {
     float: left;
+    cursor: pointer;
+}
+
+.wdr-followings {
+	cursor: pointer;
 }
 
 .wdr-follow li h5 {

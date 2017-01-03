@@ -52,6 +52,7 @@
 	                <a id="wdr-user-unfollow" class="btn btn-primary btn-sm" 
 	                     href="#" role="button"> 언팔로우 </a>
                 </c:if>
+                
                 <ul class="wdr-follow">
                     <li class="wdr-wdrs">
                         <h5>옷장</h5>
@@ -124,7 +125,6 @@
 	<!-- //wardrobeContainer -->
 
 	<!-- Script -->
-	<script src="../node_modules/jquery/dist/jquery.js"></script>
 	<script src="../wardrobe/js/jquery.colorbox-min.js"></script>
 	<script src="../wardrobe/js/wardrobe.js"></script>
 

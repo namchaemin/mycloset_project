@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import bitcamp.java87.project01.dao.WardrobeDao;
 import bitcamp.java87.project01.domain.Wardrobe;
+import bitcamp.java87.project01.service.UserService;
 import bitcamp.java87.project01.service.WardrobeService;
 
 @Service("wardrobeServiceImpl")
@@ -97,7 +98,7 @@ public class WardrobeServiceImpl implements WardrobeService {
   public Map<String, Object> getFollowingList(int follower) throws Exception {
     System.out.println("[wardrobeService] ::: getFollowerList ::: start");
     List<Wardrobe> list = wardrobeDao.getFollowerList(follower);
-
+    
     System.out.println("[wardrobeService]  ::: getFollowerList ::: List :::" + list);
     Map<String, Object> map = new HashMap<String, Object>();
     map.put("followerList", list);
