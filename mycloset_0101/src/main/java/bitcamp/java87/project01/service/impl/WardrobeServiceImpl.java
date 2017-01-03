@@ -82,4 +82,36 @@ public class WardrobeServiceImpl implements WardrobeService {
     wardrobeDao.deleteFollow(wardrobe);
   }
 
+  
+  public Wardrobe getFollower(Wardrobe wardrobe) throws Exception {
+    System.out.println("[wardrobeService] ::: getFollower(wardrobe)");
+    return wardrobeDao.getFollower(wardrobe);
+  }
+
+
+  public Map<String, Object> getFollowingList(int user_no) throws Exception {
+    System.out.println("[wardrobeService] ::: getFollowingeList ::: start");
+    List<Wardrobe> list = wardrobeDao.getFollowingList(user_no);
+
+    System.out.println("[wardrobeService]  ::: getFollowingList ::: List :::" + list);
+    Map<String, Object> map = new HashMap<String, Object>();
+    map.put("followingList", list);
+
+    System.out.println("[wardrobeService] ::: getFollwingList ::: end");
+    return map;
+  }
+
+
+  public Map<String, Object> getFollowerList(int user_no) throws Exception {
+    System.out.println("[wardrobeService] ::: getFollowerList ::: start");
+    List<Wardrobe> list = wardrobeDao.getFollowerList(user_no);
+
+    System.out.println("[wardrobeService]  ::: getFollowerList ::: List :::" + list);
+    Map<String, Object> map = new HashMap<String, Object>();
+    map.put("followerList", list);
+
+    System.out.println("[wardrobeService] ::: getFollwerList ::: end");
+    return map;
+  }
+
 }

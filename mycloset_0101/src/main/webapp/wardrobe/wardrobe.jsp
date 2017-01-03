@@ -45,10 +45,9 @@
                 
                 <input type="hidden" name="user_no" id="user_no" value="${user.user_no}">
                 <a id="wdr-user-follow" class="btn btn-default btn-sm" 
-                     href="#" role="button"> 팔로우 </a> 
+                     href="#" role="button"> 팔로우 </a>
                 <a id="wdr-user-unfollow" class="btn btn-primary btn-sm" 
                      href="#" role="button"> 언팔로우 </a>
-                
                 <ul class="wdr-follow">
                     <li class="wdr-wdrs">
                         <h5>옷장</h5>
@@ -56,11 +55,11 @@
                     </li>
                     <li class="wdr-follwers">
                         <h5>팔로워</h5>
-                        <p class="wdr-follower-cnt">21,321</p>
+                        <p class="wdr-follower-cnt"></p>
                     </li>
                     <li class="wdr-followings">
                         <h5>팔로우</h5>
-                        <p class="wdr-following-cnt">1,834</p>
+                        <p class="wdr-following-cnt"></p>
                     </li>
                 </ul>
                 

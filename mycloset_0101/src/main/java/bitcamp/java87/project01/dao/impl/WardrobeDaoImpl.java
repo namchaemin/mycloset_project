@@ -68,4 +68,19 @@ public class WardrobeDaoImpl implements WardrobeDao {
     sqlSession.delete("WardrobeMapper.deleteFollow", wardrobe);
   }
 
+  public Wardrobe getFollower(Wardrobe wardrobe) throws Exception {
+    System.out.println("[wardrobeDao] ::: getFollower");
+    return sqlSession.selectOne("WardrobeMapper.getFollower", wardrobe);
+  }
+
+  public List<Wardrobe> getFollowerList(int user_no) throws Exception {
+    System.out.println("[wardrobeDao] ::: getFollowerList");
+    return sqlSession.selectList("WardrobeMapper.getFollowerList", user_no);
+  }
+
+  public List<Wardrobe> getFollowingList(int user_no) throws Exception {
+    System.out.println("[wardrobeDao] ::: getFollowingList");
+    return sqlSession.selectList("WardrobeMapper.getFollwingList", user_no);
+  }
+
 }

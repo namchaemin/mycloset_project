@@ -97,14 +97,15 @@ public class WardrobeController {
     
     // Business Logic
     User user = userService.getUser(user_no);
+    
     System.out.println("[wardrobeController] ::: getWardrobeList ::: domain:user ::: " + user);
 
     Map<String, Object> map = wardrobeService.getWardrobeList(user_no);
 
     model.addAttribute("cls_user", user);
     model.addAttribute("list", map.get("list"));
-
-    if( user_no == sessionNo || user_no == fbSessionNo ){
+    
+    if( user_no == sessionNo || user_no == fbSessionNo ) {
       return "forward:/wardrobe/myWardrobe.jsp";
     } else {
       return "forward:/wardrobe/wardrobe.jsp";
@@ -148,7 +149,6 @@ public class WardrobeController {
   }
   
   
-
   // 옷장 팔로잉 (세션유저(Follower)가 타인 옷장의 팔로우버튼을 눌렀을 때)
   @RequestMapping(value = "addFollow")
   public @ResponseBody Wardrobe addFollow(int follower, int following) throws Exception {
@@ -170,7 +170,7 @@ public class WardrobeController {
   
   // 옷장 언팔로잉 (세션유저(Follower)가 타인 옷장의 언팔로우버튼을 눌렀을 때)
   @RequestMapping(value = "deleteFollow")
-  public @ResponseBody Wardrobe deleteWardrobe(int follower, int following) throws Exception {
+  public @ResponseBody Wardrobe deleteFollow(int follower, int following) throws Exception {
     
     System.out.println("[wardrobeController] ::: deleteFollow ");
     System.out.println("[wardrobeController] ::: deleteFollow ::: parameter:follower : "+follower);
@@ -186,23 +186,55 @@ public class WardrobeController {
     return wardrobe;
   }
   
+  /*
+  @RequestMapping(value = "getFollowerList")
+  public @ResponseBody String getFollowerList(int following, Model model) throws Exception {
+    
+    System.out.println("[wardrobeController] ::: getFollowerList ");
+    System.out.println("[wardrobeController] ::: getFollower ::: parameter:following : "+following);
+    
+    // Business Logic
+    Map<String, Object> map = wardrobeService.getFollowerList(following);
+    
+    model.addAttribute("list", map.get("followerList"));
+    
+    return "forward:/wardrobe/getWardrobe";
+  }
+  */
+  
+  @RequestMapping(value = "getFollower")
+  public @ResponseBody Wardrobe getFollower(int following, int follower) throws Exception {
+    
+    System.out.println("[wardrobeController] ::: getFollower");
+    System.out.println("[wardrobeController] ::: getFollower ::: parameter:following : "+following);
+    System.out.println("[wardrobeController] ::: getFollower ::: parameter:follower : "+follower);
+    
+    // Business Logic
+    Wardrobe wardrobe = new Wardrobe();
+    wardrobe.setFollower(follower);
+    wardrobe.setFollowing(following);
+    
+    wardrobeService.getFollower(wardrobe);
+    
+    return wardrobe;
+  }
+  
   
   @RequestMapping( value="getJsonWardrobe", method=RequestMethod.GET )
 	public ResponseEntity<String> getJsonWardrobe(HttpSession session) throws Exception{
 		
 		System.out.println("[wardrobeController] ::: getJsonWardrobe ");
 
-		//Business Logic
+		// Business Logic
 		User user = (User)session.getAttribute("faceUser");
 		
-		// Model 과 View 연결
+		// Model과 View 연결
 		JSONObject obj=new JSONObject();
 		obj.put("userNo",user.getUser_no()+"");
 		
 		HttpHeaders headers = new HttpHeaders();
 		 headers.add("Content-Type", "text/plain;charset=UTF-8");
 			
-	    
 	    return new ResponseEntity<>(
 	      obj.toJSONString(),
 	        headers,

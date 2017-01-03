@@ -12,6 +12,14 @@
 		<result property="user_no" column="user_no" jdbcType="NUMERIC" />
 		<result property="follower" column="flwer_user" jdbcType="NUMERIC" />
 		<result property="follwing" column="flwing_user" jdbcType="NUMERIC" />
+		
+        <association property="follow"  javaType="user">
+            <id property="user_no"       column="user_no"     jdbcType="NUMERIC"/>
+            <id property="nick"    column="nick"  jdbcType="VARCHAR" />
+            <id property="email" column="email"  jdbcType="VARCHAR" />
+            <id property="phot_path" column="phot_path" jdbcType="VARCHAR" />
+        </association>
+		
 	</resultMap>
     
 	<!-- SQL : INSERT -->
@@ -88,20 +96,31 @@
                         AND flwing_user = #{following}
 	</delete>
 	
-	<!-- SQL : SELECT FOLLOWER LIST -->
-    <select id="getFollowerList" parameterType="INTEGER" resultMap="wardrobeSelectMap">
+	<!-- SQL : SELECT ONE FOLLOWER -->
+    <select id="getFollowerCount" parameterType="wardrobe" resultMap="int">
         SELECT
-        flwer_user
+        COUNT(*)
         FROM follow
-        WHERE flwing_user = #{value}
+        WHERE flwer_user = #{follower} 
+                        AND flwing_user = #{following}
     </select>
 	
 	<!-- SQL : SELECT FOLLOWING LIST -->
-    <select id="getFollwingList" parameterType="INTEGER" resultMap="wardrobeSelectMap">
+    <select id="getFollowingList" parameterType="INTEGER" resultMap="wardrobeSelectMap">
         SELECT
-        flwing_user
-        FROM follow
+        flw.flwing_user, us.email, us.nick, us.phot_path
+        FROM follow flw, user_info us
         WHERE flwer_user = #{value}
+                        AND flwing_user = us.user_no
+    </select>
+    
+	<!-- SQL : SELECT FOLLOWER LIST-->
+    <select id="getFollowerList" parameterType="INTEGER" resultMap="wardrobeSelectMap">
+        SELECT
+        flw.flwer_user, us.email, us.nick, us.phot_path
+        FROM follow flw, user_info us
+        WHERE flwing_user = #{value}
+                        AND flwer_user = us.user_no
     </select>
 	
 </mapper>

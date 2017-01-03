@@ -23,4 +23,10 @@ public interface WardrobeService {
 
   public void deleteFollow(Wardrobe wardrobe) throws Exception;
   
+  public Wardrobe getFollower(Wardrobe wardrobe) throws Exception;
+
+  public Map<String, Object> getFollowingList(int user_no) throws Exception;  
+
+  public Map<String, Object> getFollowerList(int cls_no) throws Exception;  
+  
 }

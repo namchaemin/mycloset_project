@@ -124,9 +124,10 @@ public class UserController {
 	}else{
 		user.setPhot_path(file.getOriginalFilename());
 	}
-   	user.setEmail(req.getParameter("email"));
-	user.setPwd(req.getParameter("pwd"));
-	user.setNick(req.getParameter("nick"));
+    user.setUser_no(Integer.parseInt(req.getParameter("user_no")));
+    user.setEmail(req.getParameter("email"));
+    user.setPwd(req.getParameter("pwd"));
+    user.setNick(req.getParameter("nick"));
    
 	System.out.println("셋팅된 유저값:"+user);
 	session.setAttribute("user", user);

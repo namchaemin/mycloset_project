@@ -12,7 +12,7 @@ $(function() {
 	fncUpdateWardrobe();
 	fncDeleteWardrobe();
 	
-	wdrFollow();
+	fncWdrFollow();
 	
 });
 
@@ -275,7 +275,7 @@ function fncDeleteWardrobe() {
 	});
 }
 
-function wdrFollow() {
+function fncWdrFollow() {
 	
 	var follower = $("#user_no").val();
 	var following = $("#cls_user_no").val();
@@ -312,9 +312,25 @@ function wdrFollow() {
 			}
 		});//end of ajax
 	});//end of unfollow click function
-	
 }
 
-
-
-
+/*
+function fncGetFollowerLost() {
+	
+	var follower = $("#user_no").val();
+	var following = $("#cls_user_no").val();
+	
+	$(".wdr-follwers").on("click", function() 
+			{
+			$.ajax({
+			url: "/wardrobe/getFollowerList",
+			data: {
+				"cls_no" : following
+			},
+			success : function(data) {
+				alert(data);
+			}
+		});//end of ajax
+	});//end of load function
+}
+*/

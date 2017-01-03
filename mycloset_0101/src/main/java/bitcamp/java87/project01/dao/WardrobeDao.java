@@ -23,11 +23,22 @@ public interface WardrobeDao {
 
   // delete - 옷장 삭제
   public void deleteWardrobe(int cls_no) throws Exception;
-
+  
+  
   // insert - 옷장 팔로우 (세션유저(Follower)가 타인 옷장의 팔로우버튼을 눌렀을 때)
   public void addFollow(Wardrobe wardrobe) throws Exception;
   
   // delete - 옷장 언팔로우 (세션유저(Follower)가 타인 옷장의 언팔로우버튼을 눌렀을 때)
   public void deleteFollow(Wardrobe wardrobe) throws Exception;
   
+  // selectOne - 옷장 팔로우 여부
+  public Wardrobe getFollower(Wardrobe wardrobe) throws Exception ; 
+  
+  // selectList  - 팔로잉(세션유저가 팔로우 버튼을 누른 옷장) 목록 출력
+  public List<Wardrobe> getFollowerList(int user_no) throws Exception ; 
+
+  // selectList  - 팔로워(세션유저의 옷장에서 팔로우 버튼을 누른 유저) 목록 출력
+  public List<Wardrobe> getFollowingList(int user_no) throws Exception ; 
+  
+
 }
