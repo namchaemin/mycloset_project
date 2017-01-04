@@ -104,18 +104,18 @@
     </select>
     
     <!-- SQL : SELECTLIST // FOLLOWER LIST -->
-    <select id="getFollowerList" parameterType="INTEGER" resultMap="wardrobeSelectMap">
+    <select id="getFollowerList" parameterType="int" resultMap="wardrobeSelectMap">
         SELECT
-        flw.follower, us.email, us.nick, us.phot_path
+        flw.follower, us.user_no, us.email, us.nick, us.phot_path
         FROM follow flw, user_info us
         WHERE flw.following = #{value}
                         AND flw.follower = us.user_no
-    </select>    
+    </select>
     
     <!-- SQL : SELECTLIST // FOLLOWING LIST -->
-    <select id="getFollowingList" parameterType="INTEGER" resultMap="wardrobeSelectMap">
+    <select id="getFollowingList" parameterType="int" resultMap="wardrobeSelectMap">
         SELECT
-        flw.following, us.email, us.nick, us.phot_path
+        flw.following, us.user_no, us.email, us.nick, us.phot_path
         FROM follow flw, user_info us
         WHERE flw.follower = #{value}
                         AND flw.following = us.user_no

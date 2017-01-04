@@ -24,6 +24,133 @@
 </head>
 
 <body>
+
+    <!-- 팔로워 리스트 Modal -->
+    <!-- ---------------------------------------------------------------------------------------------------->
+    <div class="modal fade" id="followerListModal" tabindex="-1" role="dialog"
+        aria-labelledby="wdrModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <form name="wdr-name">
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"
+                            aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h4 class="modal-title">팔로워</h4>
+                    </div>
+
+                    <div class="modal-body" id="follow-modal-body">
+                    <input type="hidden" name="cls_user_no" id="cls_user_no" value="${cls_user.user_no}">
+                    <c:if test="${!empty user}">
+                        <input type="hidden" name="user_no" id="user_no"
+                            value="${user.user_no}">
+                    </c:if>
+                    <c:if test="${!empty faceUser}">
+                        <input type="hidden" name="user_no" id="user_no"
+                            value="${faceUser.user_no}">
+                    </c:if>
+                    <ul id="wdr-follower-ul">
+                        <li>
+                            <div class="followUserWrap">
+                                <div class="followUserImgWrap">
+                                   <a href="#">
+                                        <img class="followUserImg" src="../fileUpload/${user.phot_path}">
+                                   </a>
+                               </div>
+                               <div class="followUserInfo">
+                                   <a href="#">
+                                       nickname
+                                   </a>
+                               </div>
+                           </div>
+                        </li>
+                        
+                        <!-- 
+                        <c:forEach var="followerList" items="${followerList}">
+                            <li>
+                                <img src="../fileUpload/${wardrobe.follow.phot_path}">
+                            </li>
+                        </c:forEach>
+                         -->
+                    </ul>
+                    </div>
+
+                </div>
+                <!-- /.modal-content -->
+            </form>
+            <!-- /.form -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+    <!-- ---------------------------------------------------------------------------------------------------->
+    
+    <!-- 팔로잉 리스트 Modal -->
+    <!-- ---------------------------------------------------------------------------------------------------->
+    <div class="modal fade" id="followingListModal" tabindex="-1" role="dialog"
+        aria-labelledby="wdrModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <form name="wdr-name">
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"
+                            aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h4 class="modal-title">팔로잉</h4>
+                    </div>
+
+                    <div class="modal-body" id="follow-modal-body">
+                        <input type="hidden" name="cls_user_no" id="cls_user_no" value="${cls_user.user_no}">
+                        <c:if test="${!empty user}">
+                            <input type="hidden" name="user_no" id="user_no"
+                                value="${user.user_no}">
+                        </c:if>
+                        <c:if test="${!empty faceUser}">
+                            <input type="hidden" name="user_no" id="user_no"
+                                value="${faceUser.user_no}">
+                        </c:if>
+                        <ul id="wdr-following-ul">
+                            <li>
+                                <div class="followUserWrap">
+                                    <div class="followUserImgWrap">
+                                       <a href="#">
+                                            <img class="followUserImg" src="../fileUpload/${user.phot_path}">
+                                       </a>
+                                   </div>
+                                   <div class="followUserInfo">
+                                       <a href="#">
+                                           nickname
+                                       </a>
+                                   </div>
+                               </div>
+                            </li>
+                            
+                            <!-- 
+                            <c:forEach var="followerList" items="${followerList}">
+                                <li>
+                                    <img src="../fileUpload/${wardrobe.follow.phot_path}">
+                                </li>
+                            </c:forEach>
+                             -->
+                        </ul>
+                    </div>
+
+                </div>
+                <!-- /.modal-content -->
+            </form>
+            <!-- /.form -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+    <!-- ---------------------------------------------------------------------------------------------------->
+
+
+    <!-- 옷장 컨텐츠 시작 -->
 	<div id="wdr-container">
 		<!-- Wardrobe Header -->
         <!-- User Profile Picture -->
@@ -58,13 +185,13 @@
                         <h5>옷장</h5>
                         <p class="wdr-wdr-cnt"></p>
                     </li>
-                    <li class="wdr-follwers">
+                    <li class="wdr-followers">
                         <h5>팔로워</h5>
-                        <p class="wdr-follower-cnt">21,321</p>
+                        <p class="wdr-follower-cnt"></p>
                     </li>
                     <li class="wdr-followings">
                         <h5>팔로우</h5>
-                        <p class="wdr-following-cnt">1,834</p>
+                        <p class="wdr-following-cnt"></p>
                     </li>
                 </ul>
                 

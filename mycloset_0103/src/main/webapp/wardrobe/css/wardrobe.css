@@ -31,7 +31,54 @@ a:focus {
 	font-size: 90%;
 	color: #bd081c;
 }
+
+/* follow modal */
+#follow-modal-body {
+	padding: 0px;
+}
+
+#wdr-follower-ul li:FIRST-CHILD .followUserWrap,
+#wdr-following-ul li:FIRST-CHILD .followUserWrap {
+    border: none;
+}
+#wdr-follower-ul li:hover,
+#wdr-following-ul li:hover {
+    background: #eee;
+}
+
+.followUserWrap {
+    height: 60px;
+    border-top: 1px solid #eee;
+    vertical-align: middle;	
+    padding: 16px 20px;
+    
+}
+
+.followUserImgWrap {
+	width: 28px;
+	height: 28px;
+	border: 1px solid #eee;
+	border-radius: 50%;
+	overflow: hidden;
+	float: left;
+	margin-right: 16px;
+}
+
+.followUserImgWrap>a {
+	widht: 30px;
+	height: 30px;
+}
+
+.followUserImg {
+	width: 120%;
+}
+
+.followUserInfo {
+	line-height: 28px;
+	font-weight: 500;
+}
 /*-----------------------------------------------*/
+
 
 #wdr-container {
 	width: 80%;
@@ -94,7 +141,7 @@ a:focus {
 	vertical-align: middle;
 }
 
-.wdr-follwers {
+.wdr-followers {
     float: left;
     cursor: pointer;
 }

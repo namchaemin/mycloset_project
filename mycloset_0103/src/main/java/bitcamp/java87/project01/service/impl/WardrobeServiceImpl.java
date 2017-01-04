@@ -84,24 +84,25 @@ public class WardrobeServiceImpl implements WardrobeService {
   }
 
   public Map<String, Object> getFollowerList(int following) throws Exception {
-    System.out.println("[wardrobeService] ::: getFollowingeList ::: start");
-    List<Wardrobe> list = wardrobeDao.getFollowingList(following);
+    System.out.println("[wardrobeService] ::: getFollowerList ::: start");
+    List<Wardrobe> followerList = wardrobeDao.getFollowerList(following);
 
-    System.out.println("[wardrobeService]  ::: getFollowingList ::: List :::" + list);
+    System.out.println("[wardrobeService]  ::: getFollowerList ::: List :::" + followerList);
     Map<String, Object> map = new HashMap<String, Object>();
-    map.put("followingList", list);
+    map.put("followerList", followerList);
 
-    System.out.println("[wardrobeService] ::: getFollwingList ::: end");
+    System.out.println("[wardrobeService] ::: getFollwerList ::: end");
+    
     return map;
   }
 
   public Map<String, Object> getFollowingList(int follower) throws Exception {
-    System.out.println("[wardrobeService] ::: getFollowerList ::: start");
-    List<Wardrobe> list = wardrobeDao.getFollowerList(follower);
+    System.out.println("[wardrobeService] ::: getFollowingList ::: start");
+    List<Wardrobe> followingList = wardrobeDao.getFollowingList(follower);
     
-    System.out.println("[wardrobeService]  ::: getFollowerList ::: List :::" + list);
+    System.out.println("[wardrobeService]  ::: getFollowingList ::: List :::" + followingList);
     Map<String, Object> map = new HashMap<String, Object>();
-    map.put("followerList", list);
+    map.put("followingList", followingList);
 
     System.out.println("[wardrobeService] ::: getFollwerList ::: end");
     

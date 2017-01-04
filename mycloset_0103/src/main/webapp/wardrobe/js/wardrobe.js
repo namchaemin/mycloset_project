@@ -13,6 +13,8 @@ $(function() {
 	fncDeleteWardrobe();
 	
 	fncFollowWardrobe();
+	fncFollowerList();
+	fncFollowingList();
 	
 });
 
@@ -120,6 +122,13 @@ function wdrPostCount() {
 	
 	var wdrCount = $("#wdr-list-wrap>#wdr-list-box").length;
 	$(".wdr-wdr-cnt").text(wdrCount);
+
+	
+	var followerCnt = $("#wdr-follower-ul>li").length;
+	var followingCnt = $("#wdr-following-ul>li").length;
+
+	$(".wdr-follower-cnt").text(followerCnt);
+	$(".wdr-following-cnt").text(followingCnt);
 	
 }
 
@@ -174,10 +183,10 @@ function wdrModal() {
 	});
 	
 	
-	$("li.wdr-follwers").on("click", function() {
+	$("li.wdr-followers").on("click", function() {
 		$('#followerListModal').modal('show');
 	});
-	$("li.wdr-follwings").on("click", function() {
+	$("li.wdr-followings").on("click", function() {
 		$('#followingListModal').modal('show');
 	});
 };
@@ -323,20 +332,30 @@ function fncFollowWardrobe() {
 
 
 function fncFollowerList() {
+	
 	var following = $("#cls_user_no").val();
 	
-	$("li.wdr-follwers").on("click", function() {
+	$("li.wdr-followers").on("click", function() {
+		
+		alert("ajaxt실행");
 		
 		$.ajax({
 			url: "/wardrobe/getFollowerList",
 			data: {
 				"following" : following
 			},
-			success : function(wardrobe) {
-			}
-		});//end of ajax
-		
-	});
+			success : function(map) {	
+					var row='';
+					$.each(map.followerList,function(index,wardrobe){
+						row += "<li><div class='followUserWrap'><div class='followUserImgWrap'><a href='#'><img class='followUserImg' src='../fileUpload/"+wardrobe.follow.phot_path+"'>"
+						row += "</a> </div><div class='followUserInfo'><a href='#'>"+wardrobe.follow.nick+"</a></div></div></li>"
+					});
+					
+					$('#wdr-follower-ul>li').remove();
+					$("#wdr-follower-ul").append(row);
+				 }
+			});//end of ajax
+	});//end of click function
 }
 
 function fncFollowingList() {

@@ -200,7 +200,7 @@ public class WardrobeController {
 
   //옷장 팔로워 리스트
   @RequestMapping(value = "getFollowerList")
-  public @ResponseBody String getFollowerList(int following, Model model) throws Exception {
+  public @ResponseBody Map<String, Object> getFollowerList(int following, Model model) throws Exception {
 
     System.out.println("[wardrobeController] ::: getFollowerList ");
     System.out.println("[wardrobeController] ::: getFollowerList ::: parameter:following : " + following);
@@ -208,10 +208,11 @@ public class WardrobeController {
     // Business Logic
     Map<String, Object> map = wardrobeService.getFollowerList(following);
     
-    model.addAttribute("followerList", map.get("list"));
+    model.addAttribute("followerList", map.get("followerList"));
     
-    return null;
+    return map;
   }
+  
   
   //옷장 팔로잉 리스트
   @RequestMapping(value = "getFollowingList")
@@ -223,7 +224,7 @@ public class WardrobeController {
     // Business Logic
     Map<String, Object> map = wardrobeService.getFollowingList(follower);
     
-    model.addAttribute("followingList", map.get("list"));
+    model.addAttribute("followingList", map.get("followingList"));
     
     return null;
   }
