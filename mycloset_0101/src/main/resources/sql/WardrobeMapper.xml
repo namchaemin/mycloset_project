@@ -11,7 +11,7 @@
 		<result property="cls_name" column="cls_name" jdbcType="VARCHAR" />
 		<result property="user_no" column="user_no" jdbcType="NUMERIC" />
 		<result property="follower" column="flwer_user" jdbcType="NUMERIC" />
-		<result property="follwing" column="flwing_user" jdbcType="NUMERIC" />
+		<result property="following" column="flwing_user" jdbcType="NUMERIC" />
 		
         <association property="follow"  javaType="user">
             <id property="user_no"       column="user_no"     jdbcType="NUMERIC"/>

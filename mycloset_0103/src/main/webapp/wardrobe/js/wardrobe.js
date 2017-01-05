@@ -330,7 +330,7 @@ function fncFollowWardrobe() {
 	
 }
 
-
+/* 팔로워 리스트 */
 function fncFollowerList() {
 	
 	var following = $("#cls_user_no").val();
@@ -345,38 +345,45 @@ function fncFollowerList() {
 				"following" : following
 			},
 			success : function(map) {	
-					var row='';
-					$.each(map.followerList,function(index,wardrobe){
-						row += "<li><div class='followUserWrap'><div class='followUserImgWrap'><a href='#'><img class='followUserImg' src='../fileUpload/"+wardrobe.follow.phot_path+"'>"
-						row += "</a> </div><div class='followUserInfo'><a href='#'>"+wardrobe.follow.nick+"</a></div></div></li>"
-					});
-					
-					$('#wdr-follower-ul>li').remove();
-					$("#wdr-follower-ul").append(row);
-				 }
-			});//end of ajax
+				var row='';
+				$.each(map.followerList,function(index,wardrobe){
+					row += "<li><div class='followUserWrap'><div class='followUserImgWrap'><a href='/wardrobe/getWardrobeList?user_no="+wardrobe.follow.user_no+"'>"
+					row +="<img class='followUserImg' src='../fileUpload/"+wardrobe.follow.phot_path+"'>"
+					row += "</div><div class='followUserInfo'>"+wardrobe.follow.nick+"</a></div></div></li>"
+				});
+				
+				$('#wdr-follower-ul>li').remove();
+				$("#wdr-follower-ul").append(row);
+			 }
+		});//end of ajax
 	});//end of click function
 }
 
+
+/*  팔로잉 리스트 */
 function fncFollowingList() {
 	var follower = $("#cls_user_no").val();
 	
-	$("li.wdr-follwings").on("click", function() {
+	$("li.wdr-followings").on("click", function() {
 		
 		$.ajax({
 			url: "/wardrobe/getFollowingList",
 			data: {
 				"follower" : follower
 			},
-			success : function(wardrobe) {
+			success : function(map) {
+				var row='';
+				$.each(map.followingList,function(index,wardrobe){
+					row += "<li><div class='followUserWrap'><div class='followUserImgWrap'><a href='/wardrobe/getWardrobeList?user_no="+wardrobe.follow.user_no+"'>"
+					row += "<img class='followUserImg' src='../fileUpload/"+wardrobe.follow.phot_path+"'>"
+					row += "</div><div class='followUserInfo'>"+wardrobe.follow.nick+"</a></div></div></li>"
+				});
+				
+				$('#wdr-following-ul>li').remove();
+				$("#wdr-following-ul").append(row);
 			}
 		});//end of ajax
-		
 	});
 	
-	
 }
-
-
-
 

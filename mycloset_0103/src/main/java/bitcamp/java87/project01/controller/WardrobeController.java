@@ -197,7 +197,6 @@ public class WardrobeController {
     return wardrobe;
   }
 
-
   //옷장 팔로워 리스트
   @RequestMapping(value = "getFollowerList")
   public @ResponseBody Map<String, Object> getFollowerList(int following, Model model) throws Exception {
@@ -213,10 +212,9 @@ public class WardrobeController {
     return map;
   }
   
-  
   //옷장 팔로잉 리스트
   @RequestMapping(value = "getFollowingList")
-  public @ResponseBody String getFollowingList(int follower, Model model) throws Exception {
+  public @ResponseBody Map<String, Object> getFollowingList(int follower, Model model) throws Exception {
     
     System.out.println("[wardrobeController] ::: getFollowingList ");
     System.out.println("[wardrobeController] ::: getFollowingList ::: parameter:following : " + follower);
@@ -226,7 +224,7 @@ public class WardrobeController {
     
     model.addAttribute("followingList", map.get("followingList"));
     
-    return null;
+    return map;
   }
 
 

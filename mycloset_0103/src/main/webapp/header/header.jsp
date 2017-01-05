@@ -22,16 +22,16 @@
 		<header id="header">
 			<!-- logo -->
 			<h1 class="hd-logo">
-				<a id="hd-logo-link" href="../main/main.jsp"> <img id="hd-logo-svg"
-					src="../header/css/images/logo_pk.svg" alt="logo">
+				<a id="hd-logo-link" href="../main/main.jsp"> <img
+					id="hd-logo-svg" src="../header/css/images/logo_pk.svg" alt="logo">
 				</a>
 			</h1>
 
 			<!-- Search -->
 			<div id="hd-search">
 				<span id="hd-icon-search" class="glyphicon glyphicon-search"
-					aria-hidden="true"></span> <input type="text" class="hd-searchBox" id="hd-searchBar"
-					name="hd-searchBar" placeholder="Search" required />
+					aria-hidden="true"></span> <input type="text" class="hd-searchBox"
+					id="hd-searchBar" name="hd-searchBar" placeholder="Search" required />
 			</div>
 
 			<!-- Navigation -->
@@ -92,20 +92,25 @@
 					<!-- //gnb02 Message -->
 
 					<!-- gnb03 my account modify-->
-					<li><c:if test="${!empty user }">
+					<li>
+					   <c:if test="${!empty user }">
 							<a href="/wardrobe/getWardrobeList?user_no=${user.user_no}"
-								class="" draggable="false"> <!-- 일반 유저 로그인 --> <!-- 프로필 사진이 null일 때 -->
-								<span class="hd-img-box"> <c:if
-										test="${empty user.phot_path}">
-										<img class="hd-my-img" alt=""
-											src="../header/upload/images.png" draggable="false"
-											data-pin-nopin="true">
-									</c:if> <!-- 프로필 사진이 업로드되어 있을 때  --> <c:if
-										test="${!empty user.phot_path}">
-										<img class="hd-my-img" alt=""
-											src="../fileUpload/${user.phot_path}">
-									</c:if>
-							</span> <span class="hd-my-nick"> ${user.nick} </span> <!-- <span class="hd-my-email"> ${user.email} </span>  -->
+								class="" draggable="false"> 
+								<!-- 일반 유저 로그인 --> 
+								<!-- 프로필 사진이 null일 때 -->
+								<span class="hd-img-box"> 
+								<c:if test="${empty user.phot_path}">
+									<img class="hd-my-img" alt=""
+											  src="../header/upload/images.png" draggable="false"
+											  data-pin-nopin="true">
+								</c:if> 
+								<!-- 프로필 사진이 업로드되어 있을 때  --> 
+								<c:if test="${!empty user.phot_path}">
+									<img class="hd-my-img" alt="" src="../fileUpload/${user.phot_path}">
+								</c:if>
+							     </span> 
+							     <span class="hd-my-nick"> ${user.nick} </span> 
+							     <!-- <span class="hd-my-email"> ${user.email} </span>  -->
 							</a>
 						</c:if> <!-- facebook으로 로그인 시 --> <c:if test="${!empty  faceUser}">
 							<a href="/wardrobe/getWardrobeList?user_no=${faceUser.user_no}"
@@ -302,12 +307,12 @@
 		}
 	</script>
 	<script>
-	var elemArray = new Object();   //Array가 아닌 Object임에 주의
-	/* $.each($(".styleTagNumber"), function( index, value ) {
-		var obj = { left : -1 , top : -1 }
-		elemArray[$(this).attr('id')] = obj;
-	}); */
-	
+		var elemArray = new Object(); //Array가 아닌 Object임에 주의
+		/* $.each($(".styleTagNumber"), function( index, value ) {
+			var obj = { left : -1 , top : -1 }
+			elemArray[$(this).attr('id')] = obj;
+		}); */
+
 		$(".form-group").hide();
 		$(".styleTagNumber").hide();
 
@@ -352,49 +357,57 @@
 		$("#stylePlusButton").mouseout(function(e) {
 			$(this).attr("src", "../header/img/plus-button.svg");
 		});
-		
-	    
-	        $("button[class='close small']").each(function(index){
-	        	$(this).click(function(e){
-	        		
-	        		if((Number(index)==0)){
-	        			changeCloseBtn((Number(index)+1));
-	        		}else if((Number(index)==1)){
-	        		    changeCloseBtnSlideUp((Number(index)+1));
-	        		}else if((Number(index)==2)){
-	        		    changeCloseBtnSlideUp((Number(index)+1));
-	        		}else if((Number(index)==3)){
-	        		    changeCloseBtnSlideUp((Number(index)+1));
-	        		}else if((Number(index)==4)){
-	        			changeCloseBtnSlideUp((Number(index)+1));
-	        		}
-	        		
-	        		e.preventDefault();
-	        	});
-			});
-	        
-	        var changeCloseBtn = function(index){
-	        	$("#formGroup"+index).find("input").eq(0).val("");
-                $("#formGroup"+index).find("input").eq(1).val("");
-                $("#formGroup"+index).hide();
-                $("#styleTagNumber"+index).hide();
-	        }
-	        
-	        var changeCloseBtnSlideUp = function(index){
-                $("#formGroup"+index).find("input").eq(0).val("");
-                $("#formGroup"+index).find("input").eq(1).val("");
-                $("#formGroup"+index).slideUp();
-                $("#styleTagNumber"+index).slideUp();
-            }
 
-		$(".styleTagNumber").draggable({
-			cursor : "pointer",
-			containment : "#output",
-			stop : function( event, ui ){ 
-				//alert( (Number(ui.offset.left)-$("#output").offset().left) + "," + (Number(ui.offset.top)-$("#output").offset().top) );
-		        $("#input_" + $(this).attr('id')).val( (Number(ui.offset.left)-$("#output").offset().left) + "," + (Number(ui.offset.top)-$("#output").offset().top) )
-			}
+		$("button[class='close small']").each(function(index) {
+			$(this).click(function(e) {
+
+				if ((Number(index) == 0)) {
+					changeCloseBtn((Number(index) + 1));
+				} else if ((Number(index) == 1)) {
+					changeCloseBtnSlideUp((Number(index) + 1));
+				} else if ((Number(index) == 2)) {
+					changeCloseBtnSlideUp((Number(index) + 1));
+				} else if ((Number(index) == 3)) {
+					changeCloseBtnSlideUp((Number(index) + 1));
+				} else if ((Number(index) == 4)) {
+					changeCloseBtnSlideUp((Number(index) + 1));
+				}
+
+				e.preventDefault();
+			});
 		});
+
+		var changeCloseBtn = function(index) {
+			$("#formGroup" + index).find("input").eq(0).val("");
+			$("#formGroup" + index).find("input").eq(1).val("");
+			$("#formGroup" + index).hide();
+			$("#styleTagNumber" + index).hide();
+		}
+
+		var changeCloseBtnSlideUp = function(index) {
+			$("#formGroup" + index).find("input").eq(0).val("");
+			$("#formGroup" + index).find("input").eq(1).val("");
+			$("#formGroup" + index).slideUp();
+			$("#styleTagNumber" + index).slideUp();
+		}
+
+		$(".styleTagNumber")
+				.draggable(
+						{
+							cursor : "pointer",
+							containment : "#output",
+							stop : function(event, ui) {
+								//alert( (Number(ui.offset.left)-$("#output").offset().left) + "," + (Number(ui.offset.top)-$("#output").offset().top) );
+								$("#input_" + $(this).attr('id'))
+										.val(
+												(Number(ui.offset.left) - $(
+														"#output").offset().left)
+														+ ","
+														+ (Number(ui.offset.top) - $(
+																"#output")
+																.offset().top))
+							}
+						});
 
 		//좌표 가져오는 변수
 		var x = "";
@@ -417,7 +430,6 @@
 		});
 
 		$(".styleTagNumber").hover().css("cursor", "pointer");
-		
 	</script>
 </body>
 

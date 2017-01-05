@@ -97,7 +97,7 @@ public class WardrobeServiceImpl implements WardrobeService {
     Map<String, Object> map = new HashMap<String, Object>();
     map.put("followingList", list);
 
-    System.out.println("[wardrobeService] ::: getFollwingList ::: end");
+    System.out.println("[wardrobeService] ::: getFollowingList ::: end");
     return map;
   }
 
