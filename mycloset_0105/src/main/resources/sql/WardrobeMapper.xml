@@ -120,5 +120,21 @@
         WHERE flw.follower = #{value}
                         AND flw.following = us.user_no
     </select>
+    
+        
+    <!-- SQL : SELECT ONE // FOLLOWER COUNT -->
+    <select id="getFollowerCount" parameterType="int" resultType="int">
+        SELECT COUNT(*)
+        FROM follow
+        WHERE following = #{value}
+    </select>
+    
+    <!-- SQL : SELECT ONE // FOLLOWING COUNT -->
+    <select id="getFollowingCount" parameterType="int" resultType="int">
+        SELECT COUNT(*)
+        FROM follow
+        WHERE follower = #{value}
+    </select>
+    
 
 </mapper>

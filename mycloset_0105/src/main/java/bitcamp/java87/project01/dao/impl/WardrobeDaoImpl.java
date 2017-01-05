@@ -1,6 +1,8 @@
 package bitcamp.java87.project01.dao.impl;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,9 +45,18 @@ public class WardrobeDaoImpl implements WardrobeDao {
     return sqlSession.selectOne("WardrobeMapper.getWardrobeByClsNo", cls_no);
   }
 
-  public List<Wardrobe> getWardrobeList(int user_no) throws Exception {
+  public Map<String, Object> getWardrobeList(int user_no) throws Exception {
+
     System.out.println("[wardrobeDao] ::: getWardrobeList");
-    return sqlSession.selectList("WardrobeMapper.getWardrobeList", user_no);
+    Map<String , Object>  map = new HashMap<String, Object>();
+    
+    List<Wardrobe> list =  sqlSession.selectList("WardrobeMapper.getWardrobeList", user_no);
+    
+    map.put("followerCount",sqlSession.selectOne("WardrobeMapper.getFollowerCount", user_no));
+    map.put("followingCount",sqlSession.selectOne("WardrobeMapper.getFollowingCount", user_no));
+    map.put("list", list);
+    
+    return map; 
   }
 
   public void updateWardrobe(Wardrobe wardrobe) throws Exception {

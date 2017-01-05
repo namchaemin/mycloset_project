@@ -116,6 +116,8 @@ public class WardrobeController {
     }
     
     model.addAttribute("cls_user", user);
+    model.addAttribute("followerCount", map.get("followerCount"));
+    model.addAttribute("followingCount", map.get("followingCount"));
     model.addAttribute("list", map.get("list"));
 
     if (user_no == sessionNo) {

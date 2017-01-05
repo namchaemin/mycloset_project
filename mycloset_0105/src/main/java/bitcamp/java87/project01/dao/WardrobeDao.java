@@ -1,6 +1,7 @@
 package bitcamp.java87.project01.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import bitcamp.java87.project01.domain.Wardrobe;
 
@@ -16,7 +17,7 @@ public interface WardrobeDao {
   public Wardrobe getWardrobe(int cls_no) throws Exception ; 
   
   // selectList  - 옷장 목록 출력
-  public List<Wardrobe> getWardrobeList(int user_no) throws Exception ; 
+  public Map<String, Object> getWardrobeList(int user_no) throws Exception ; 
 
   // update - 옷장 이름 변경
   public void updateWardrobe(Wardrobe wardrobe) throws Exception;

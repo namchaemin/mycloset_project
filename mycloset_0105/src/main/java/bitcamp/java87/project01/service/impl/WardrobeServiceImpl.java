@@ -44,16 +44,8 @@ public class WardrobeServiceImpl implements WardrobeService {
   }
 
   public Map<String, Object> getWardrobeList(int user_no) throws Exception {
-    
-    System.out.println("[wardrobeService] ::: getWardrobeList ::: start");
-    List<Wardrobe> list = wardrobeDao.getWardrobeList(user_no);
-
-    System.out.println("[wardrobeService]  ::: getWardrobeList ::: List :::" + list);
-    Map<String, Object> map = new HashMap<String, Object>();
-    map.put("list", list);
-
-    System.out.println("[wardrobeService] ::: getWardrobeList ::: end");
-    return map;
+    System.out.println("[wardrobeService] ::: getWardrobeList");
+    return wardrobeDao.getWardrobeList(user_no);
   }
 
   public void updateWardrobe(Wardrobe wardrobe) throws Exception {
